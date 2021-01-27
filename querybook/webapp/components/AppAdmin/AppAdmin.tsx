@@ -123,10 +123,10 @@ export const AppAdmin: React.FunctionComponent = () => {
         <div className="AdminLanding">
             <div className="AdminLanding-top">
                 <div className="AdminLanding-title">
-                    Welcome to the {getAppName()} Admin App
+                    Welcome to {getAppName()}'s Admin Tools
                 </div>
                 <div className="AdminLanding-desc">
-                    All your settings are here.
+                    Configure {getAppName()} for your company.
                 </div>
             </div>
             <div className="AdminLanding-content">

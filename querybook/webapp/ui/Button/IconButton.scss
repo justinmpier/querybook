@@ -7,6 +7,16 @@
     display: inline-flex;
     position: relative;
 
+    &.standard-size {
+        width: var(--square-icon-size);
+        height: var(--square-icon-size);
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     &.invert-circle {
         background-color: var(--color-primary-3);
         padding: 4px;
@@ -16,21 +26,26 @@
     &.no-padding {
         padding: 0px;
     }
+
     &:hover {
         color: var(--icon-hover-color);
     }
+
     &.active {
         color: var(--icon-active-color);
     }
+
     &.fill {
         svg {
             fill: var(--icon-color);
         }
+
         &:hover {
             svg {
                 fill: var(--icon-hover-color);
             }
         }
+
         &.active {
             svg {
                 fill: var(--icon-active-color);
@@ -74,5 +89,6 @@
 
     .icon-title {
         font-size: var(--xxxsmall-text-size);
+        margin-bottom: -3px;
     }
 }

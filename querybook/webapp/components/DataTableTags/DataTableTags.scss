@@ -1,6 +1,10 @@
 .DataTableTags {
     flex-wrap: wrap;
 
+    &:empty {
+        display: none;
+    }
+
     .Tag {
         margin: 4px 8px 4px 0px;
         cursor: pointer;

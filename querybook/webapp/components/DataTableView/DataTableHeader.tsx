@@ -74,22 +74,20 @@ export const DataTableHeader: React.FunctionComponent<IDataTableHeader> = ({
     }, []);
 
     const titleDOM = (
-        <Level className="mb4">
-            <div>
-                <Title className="pb12">
-                    {shortTableName}
-                    <BoardItemAddButton
-                        size={16}
-                        itemType="table"
-                        itemId={table.id}
-                        className="ml4"
-                    />
-                </Title>
-                <Title subtitle size={5}>
-                    {tableName}
-                </Title>
-            </div>
-        </Level>
+        <div className="horizontal-space-between">
+            <Title>
+                {shortTableName}
+                <BoardItemAddButton
+                    size={16}
+                    itemType="table"
+                    itemId={table.id}
+                    className="ml4"
+                />
+            </Title>
+            <span className="DataTableHeader-table-full-name">
+                {tableName}
+            </span>
+        </div>
     );
 
     const ownershipDOM = (tableOwnerships || []).map((ownership) => (

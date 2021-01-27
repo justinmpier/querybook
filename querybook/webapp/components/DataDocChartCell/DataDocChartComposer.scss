@@ -2,88 +2,141 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
+
     .DataDocChartComposer-content {
         display: flex;
         flex-direction: row;
-        height: calc(100vh - 38px);
-        .DataDocChartComposer-left {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            flex-grow: 1;
-            padding: 8px;
+        height: 100%;
 
-            .ReactTable {
-                width: 100%;
-            }
-            .DataDocChartComposer-chart {
+        .DataDocChartComposer-left {
+            display: block;
+            flex: 1;
+            position: relative;
+
+            .DataDocChartComposer-left-inner {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
                 display: flex;
                 flex-direction: column;
+                padding: unquote("calc(2 * var(--padding))");
 
-                flex-grow: 1;
-                margin: 0 auto;
-                width: 100%;
-                overflow-y: hidden;
-                .DataDocChartComposer-chart-sizer {
-                    flex: 1;
+                .ReactTable {
+                    width: 100%;
+                }
+
+                .DataDocChartComposer-chart {
+                    display: flex;
+                    flex-direction: column;
+
+                    flex-grow: 1;
+                    margin: 0 auto;
+                    width: 100%;
+                    overflow-y: hidden;
+
+                    .DataDocChartComposer-chart-sizer {
+                        flex: 1;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                        width: 100%;
+                        padding-top: var(--padding);
+
+                        canvas {
+                            margin: auto;
+                        }
+                    }
+                    .DataDocChartComposer-exec-picker {
+                        margin-left: 4px;
+                    }
+                }
+                .DataDocChartComposer-bottom {
                     position: relative;
                     display: flex;
                     flex-direction: column;
-                    overflow: hidden;
-                    width: 100%;
 
-                    canvas {
-                        margin: auto;
+                    .DataDocChartComposer-data {
+                        position: relative;
+                        width: 100%;
                     }
-                }
-                .DataDocChartComposer-exec-picker {
-                    margin-left: 4px;
-                }
-            }
-            .DataDocChartComposer-bottom {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-
-                .DataDocChartComposer-data {
-                    position: relative;
-                    width: 100%;
                 }
             }
         }
 
         .DataDocChartComposer-right {
-            border-left: var(--border);
             width: 360px;
             min-width: 360px;
             display: flex;
             flex-direction: column;
+            position: relative;
 
-            .DataDocChartComposer-form {
-                flex: 1;
-                overflow-y: auto;
-                padding-right: 0px;
-                flex-grow: 1;
-                padding: 8px;
-                padding-right: 0;
-                .DataDocChartComposer-info {
-                    color: var(--light-text-color);
+            .DataDocChartComposer-right-inner {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                display: flex;
+                flex-direction: column;
+
+                .DataDocChartComposer-right-editor {
+                    margin: var(--padding);
+                    margin-top: 0px;
+                    border-radius: var(--border-radius);
+                    background: var(--bg-color-secondary);
+                    flex: 1;
+                    position: relative;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+
+                    .Tabs {
+                        padding: var(--padding);
+                        margin: var(--padding);
+                        width: 100%;
+                    }
+
+                    .DataDocChartComposer-form {
+                        flex: 1;
+                        overflow-y: auto;
+                        padding-right: 0px;
+                        flex-grow: 1;
+                        padding: var(--padding);
+                        padding-right: 0;
+                        .DataDocChartComposer-info {
+                            color: var(--light-text-color);
+                        }
+
+                        .Select,
+                        select,
+                        input:not([type='checkbox']) {
+                            width: 100%;
+                        }
+
+                        .Checkbox {
+                            display: flex;
+                            margin-left: 4px;
+                            font-size: var(--small-text-size);
+                            flex-direction: row-reverse;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin: 4px 0px;
+                        }
+                    }
                 }
 
-                .Select,
-                select,
-                input:not([type='checkbox']) {
-                    width: 100%;
-                }
+                .DataDocChartComposer-button {
+                    padding: var(--padding);
+                    text-align: center;
 
-                .Checkbox {
-                    display: flex;
-                    margin-left: 4px;
-                    font-size: var(--small-text-size);
-                    flex-direction: row-reverse;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin: 4px 0px;
+                    .Button {
+                        width: 100%;
+                        padding: var(--padding);
+                        justify-content: center;
+                    }
                 }
             }
         }

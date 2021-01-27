@@ -18,13 +18,12 @@ export interface IUserAvatarComponentProps
     onClick?: () => any;
 }
 
-const defaultNoUserBackground = '#F65B50';
+//TODO: Share accent color var between js/css
+//TODO: Use a diff method for multiple users,
+//      e.g. patterns but with the same color.
+const defaultNoUserBackground = '#746BD2';
 const defaultUserIconBackgrounds = [
-    '#FF6400',
-    '#FAB904',
-    '#0FA573',
-    '#4A90E2',
-    '#B469EB',
+    defaultNoUserBackground,
 ];
 
 const DefaultUserIcon: React.FunctionComponent<{

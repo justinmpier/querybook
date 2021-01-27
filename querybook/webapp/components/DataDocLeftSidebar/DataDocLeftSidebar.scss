@@ -3,16 +3,17 @@
     position: sticky;
     top: 0;
     z-index: 5;
-
     display: flex;
     flex-direction: column;
 
     .sidebar-content {
-        margin-top: 88px;
+        height: 100%;
+        width: 50px;
+        padding-bottom: 6px; // visual alignment
     }
 
     .contents-toggle-button {
-        border: var(--border);
+        border: none;
         border-left: none;
         margin-right: 0;
         padding-right: 8px;

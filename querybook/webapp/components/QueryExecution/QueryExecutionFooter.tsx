@@ -22,7 +22,7 @@ export const QueryExecutionFooter: React.FunctionComponent<{
     } else {
         const lastExecution =
             statementExecutions[statementExecutions.length - 1];
-        text = 'Run ';
+        text = 'Ran ';
 
         if (lastExecution && lastExecution.completed_at) {
             text =

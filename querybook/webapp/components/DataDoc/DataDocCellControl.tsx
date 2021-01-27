@@ -6,7 +6,7 @@ import { titleize, sleep, copy } from 'lib/utils';
 import { IDataCellMeta } from 'const/datadoc';
 import { useBoundFunc } from 'hooks/useBoundFunction';
 import { AsyncButton } from 'ui/AsyncButton/AsyncButton';
-import { SoftButton } from 'ui/Button/Button';
+import { Button, DiscreetSoftButton, SoftButton } from 'ui/Button/Button';
 import { Dropdown } from 'ui/Dropdown/Dropdown';
 import { ListMenu, IListMenuItem } from 'ui/Menu/ListMenu';
 
@@ -140,7 +140,7 @@ export const DataDocCellControl: React.FunctionComponent<IProps> = ({
                     className="block-crud-button"
                     onClick={handleDeleteCell}
                     icon="x"
-                    type="soft"
+                    type="discreet_soft"
                     key="delete"
                 />
             )
@@ -155,7 +155,7 @@ export const DataDocCellControl: React.FunctionComponent<IProps> = ({
                         className="block-crud-button"
                         onClick={handleMoveCellClick}
                         icon={isHeader ? 'chevrons-up' : 'chevrons-down'}
-                        type="soft"
+                        type="discreet_soft"
                         key="swap"
                     />
                 )
@@ -165,7 +165,7 @@ export const DataDocCellControl: React.FunctionComponent<IProps> = ({
             // undefined means the cell cannot be collapsed
             leftButtons.push(
                 !isCollapsedDefault && toggleDefaultCollapsed && (
-                    <SoftButton
+                    <DiscreetSoftButton
                         className={
                             animateDefaultChange
                                 ? 'block-crud-button disabled'
@@ -218,7 +218,7 @@ export const DataDocCellControl: React.FunctionComponent<IProps> = ({
                 className={'inline mr4'}
                 key="dropdown-menu"
                 customButtonRenderer={() => (
-                    <SoftButton
+                    <DiscreetSoftButton
                         className="block-crud-button "
                         icon={'more-vertical'}
                     />

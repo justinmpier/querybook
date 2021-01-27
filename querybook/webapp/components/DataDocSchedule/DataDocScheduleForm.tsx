@@ -164,8 +164,8 @@ export const DataDocScheduleForm: React.FunctionComponent<IDataDocScheduleFormPr
                 dirty,
             }) => {
                 const formTitle = isCreateForm
-                    ? 'Add new schedule'
-                    : 'Edit schedule';
+                    ? 'Add a new schedule'
+                    : 'Edit the schedule';
 
                 const enabledField = !isCreateForm && (
                     <SimpleField label="Enabled" name="enabled" type="toggle" />
@@ -230,6 +230,7 @@ export const DataDocScheduleForm: React.FunctionComponent<IDataDocScheduleFormPr
                                 disabled={!isValid || (!dirty && !isCreateForm)}
                                 onClick={submitForm}
                                 title={isCreateForm ? 'Create' : 'Update'}
+                                type="soft"
                             />
                         </div>
                     </Level>
@@ -239,7 +240,7 @@ export const DataDocScheduleForm: React.FunctionComponent<IDataDocScheduleFormPr
                     <div className="DataDocScheduleForm">
                         <div className="horizontal-space-between">
                             <div>
-                                <Title size={4}>{formTitle}</Title>
+                                <Title size={4} gap>{formTitle}</Title>
                             </div>
                             <div>
                                 <InfoButton>
@@ -379,7 +380,7 @@ const ScheduleExportsForm: React.FC<{
                     <div className="center-align mt8">
                         <SoftButton
                             icon="plus"
-                            title="Export Query Cell Result"
+                            title="Add Query Cell Result Exporter"
                             onClick={() =>
                                 arrayHelpers.push({
                                     exporter_cell_id: null,

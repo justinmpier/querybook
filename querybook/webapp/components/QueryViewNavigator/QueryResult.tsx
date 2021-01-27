@@ -35,23 +35,21 @@ export const QueryResult: React.FunctionComponent<IProps> = ({
                     <StatusIcon
                         status={queryStatusToStatusIcon[queryExecution.status]}
                     />
-                    <Title size={6} className="mr8">
-                        Execution {queryId}
-                    </Title>
+                    <div className="QueryResult-title">#{queryId}</div>
                 </div>
-                <Tag>{queryEngineById[queryExecution.engine_id].name}</Tag>
-            </div>
-            <Title subtitle size={7} className="query-context mb4">
-                {queryCode.slice(0, 60)}
-            </Title>
-            <div className="horizontal-space-between">
-                <div>
-                    <UserName uid={queryExecution.uid} />
-                </div>
-                <div>
+                {/* <Tag>{queryEngineById[queryExecution.engine_id].name}</Tag> */}
+                <div className="QueryResult-time">
                     {moment.utc(queryExecution.created_at, 'X').fromNow()}
                 </div>
             </div>
+            <div className="query-context mb4">
+                {queryCode.slice(0, 90)}
+            </div>
+            {/* <div className="horizontal-space-between">
+                <div>
+                    <UserName uid={queryExecution.uid} />
+                </div>
+            </div> */}
         </div>
     );
 };

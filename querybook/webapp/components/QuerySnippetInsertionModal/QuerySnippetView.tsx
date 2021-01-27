@@ -14,7 +14,7 @@ import { BoundQueryEditor } from 'components/QueryEditor/BoundQueryEditor';
 import { IQuerySnippet } from 'redux/querySnippets/types';
 import { IQueryEngine } from 'const/queryEngine';
 
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton } from 'ui/Button/Button';
 import { CopyButton } from 'ui/CopyButton/CopyButton';
 import { DebouncedInput } from 'ui/DebouncedInput/DebouncedInput';
 import { FormField, FormFieldInputSectionRowGroup } from 'ui/Form/FormField';
@@ -188,10 +188,9 @@ export class QuerySnippetView extends React.PureComponent<
         );
 
         const controlDOM = (
-            <div className="right-align">
-                <CopyButton copyText={context} title="Copy To Clipboard" />
-                <Button
-                    color="confirm"
+            <div className="right-align flex-row with-padding">
+                <CopyButton type="text" copyText={context} title="Copy To Clipboard" />
+                <SoftButton
                     title="Insert"
                     onClick={this.handleQuerySnippetInsert}
                 />

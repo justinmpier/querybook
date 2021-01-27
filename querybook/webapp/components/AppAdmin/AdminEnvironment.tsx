@@ -169,7 +169,7 @@ export const AdminEnvironment: React.FunctionComponent<IProps> = ({
                         <SimpleField
                             name="hidden"
                             type="toggle"
-                            help="Hidden environments will not be shown to unauthorized users"
+                            help="Hidden environments' names will not be shown to users not in them"
                         />
                         <SimpleField
                             name="shareable"

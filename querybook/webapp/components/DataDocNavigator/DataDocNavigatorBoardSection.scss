@@ -1,16 +1,25 @@
 .NavigatorBoardView {
+    border-radius: var(--border-radius);
+
     &.dragged-over {
-        background-color: var(--color-accent-bg-hover);
+        background-color: var(--sidebar-hover-color);
     }
 
     .board-header-section {
+        padding: 5px 0px 5px 12px;
+
+        &:hover {
+            color: var(--text-color);
+        }
+
         .board-header-title {
             cursor: pointer;
             overflow: hidden;
+            color: var(--ui-text-color);
+            line-height: normal;
 
             .Title {
-                color: var(--light-text-color);
-                text-transform: capitalize;
+                color: var(--ui-text-color);
                 user-select: none;
             }
         }
@@ -18,6 +27,7 @@
         .header-control-section {
             display: inline-flex;
             align-items: center;
+            height: 17px;
 
             .hover-control-section {
                 display: none;
@@ -56,13 +66,32 @@
 }
 
 .DataDocNavigatorBoardSection {
+
     .navigator-board-header {
         background-color: var(--light-bg-color);
         user-select: none;
         cursor: pointer;
+        background: var(--color-button-bg);
+        border-radius: var(--border-radius);
+        margin-bottom: var(--padding);
+        color: var(--ui-text-color);
 
         .Title {
             color: var(--light-text-color);
         }
+    }
+
+    .DataDocNavigatorBoardSection-list {
+        padding-bottom: var(--padding);
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .board-item-list-empty {
+        font-size: var(--large-text-size);
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }

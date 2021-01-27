@@ -22,7 +22,7 @@ import {
     DataTableViewQueryUsers,
     useLoadQueryUsers,
 } from 'components/DataTableViewQueryExample/DataTableViewQueryUsers';
-import { Button, TextButton } from 'ui/Button/Button';
+import { Button, SoftButton, TextButton } from 'ui/Button/Button';
 import { EditableTextField } from 'ui/EditableTextField/EditableTextField';
 import { Message } from 'ui/Message/Message';
 import { Table } from 'ui/Table/Table';
@@ -89,7 +89,7 @@ export class DataTableViewOverview extends React.PureComponent<
                 value={table.description as DraftJs.ContentState}
                 onSave={this.onDescriptionSave}
             />
-        ) : null;
+        ) : 'No description found. You can add a description by clicking on Edit.';
 
         const detailsDOM = (
             <Table
@@ -137,14 +137,14 @@ export class DataTableViewOverview extends React.PureComponent<
         const metaSection = (
             <DataTableViewOverviewSection title="Meta info">
                 <div>
-                    <p>
+                    <div>
                         First created in {getAppName()} at{' '}
                         {generateFormattedDate(table.created_at)}.
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         Last pulled from metastore at{' '}
                         {generateFormattedDate(table.updated_at)}.
-                    </p>
+                    </div>
                 </div>
             </DataTableViewOverviewSection>
         );
@@ -162,7 +162,7 @@ export class DataTableViewOverview extends React.PureComponent<
 
         const sampleQueriesSection = (
             <DataTableViewOverviewSection title="Sample DataDocs">
-                <TextButton
+                <SoftButton
                     onClick={() =>
                         navigateWithinEnv(
                             `/search/?searchType=DataDoc&searchString=${tableName}`,
@@ -173,7 +173,7 @@ export class DataTableViewOverview extends React.PureComponent<
                     }
                 >
                     Click to View Sample DataDocs
-                </TextButton>
+                </SoftButton>
             </DataTableViewOverviewSection>
         );
 

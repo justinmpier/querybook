@@ -15,7 +15,7 @@ export const ScheduleDataDocButton: React.FunctionComponent<IProps> = ({
 }) => {
     const [showForm, setShowForm] = React.useState(false);
     const modal = showForm && (
-        <Modal onHide={() => setShowForm(false)} title="Schedule DataDoc">
+        <Modal onHide={() => setShowForm(false)} hideClose>
             <DataDocSchedule isEditable={isEditable} docId={docId} />
         </Modal>
     );
@@ -28,6 +28,7 @@ export const ScheduleDataDocButton: React.FunctionComponent<IProps> = ({
                 tooltip="Schedule DataDoc"
                 tooltipPos="left"
                 title="Schedule"
+                standardSize
             />
             {modal}
         </div>

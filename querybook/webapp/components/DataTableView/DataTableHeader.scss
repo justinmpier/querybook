@@ -8,6 +8,17 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        .DataTableHeader-title {
+            width: 100%;
+            margin-bottom: unquote("calc(2 * var(--padding))");
+
+            .DataTableHeader-table-full-name {
+                color: var(--ui-text-color);
+            }
+        }
+
+
     }
     .DataTableHeader-bottom {
         .DataTableHeader-left {

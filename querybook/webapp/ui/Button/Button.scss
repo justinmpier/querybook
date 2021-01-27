@@ -1,0 +1,13 @@
+@import './../../scss_variables.scss';
+
+.Button {
+
+    &.Button-textButton {
+        background: none;
+        padding: 5px var(--padding);
+
+        &:hover {
+            background: none;
+        }
+    }
+}

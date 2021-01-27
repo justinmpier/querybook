@@ -20,9 +20,10 @@
 
             .editor {
                 flex: 1;
-                margin: 0;
+                margin: 0px 10px 10px 10px;
                 overflow: hidden;
                 display: flex;
+
                 .QueryEditor {
                     flex: 1;
                 }
@@ -54,8 +55,13 @@
         p {
             font-weight: bold;
             font-size: var(--large-text-size);
-            color: var(--dark-text-color);
             padding: 8px;
+            font-family: var(--family-display);
+            color: var(--color-text-titles-big);
+
+            &::placeholder {
+                color: var(--empty-text-color);
+            }
         }
     }
 
@@ -67,15 +73,15 @@
         }
 
         .additional-dropdown-button {
-            @include pushable();
+            // @include pushable();
             @include fancy-hover();
-
-            cursor: pointer;
-            margin-left: 5px;
-
-            height: 100%;
+            cursor: default;
             font-size: 20px;
+            margin-left: var(--padding);
             line-height: 38px;
+            height: 40px;
+            width: 40px;
+            color: var(--ui-text-color);
 
             svg {
                 z-index: 4;
@@ -96,7 +102,7 @@
             position: absolute;
             top: 0;
             z-index: 9;
-            right: 0;
+            right: 5px;
 
             .Button {
                 background-color: transparent;
@@ -106,6 +112,9 @@
 
     .add-snippet-wrapper {
         text-align: center;
-        margin-top: 5px;
+        position: absolute;
+        top: 104px;
+        right: 52px;
+        z-index: 10;
     }
 }

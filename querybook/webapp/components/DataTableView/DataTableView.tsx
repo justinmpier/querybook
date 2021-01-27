@@ -55,7 +55,7 @@ const tabDefinitions = [
         key: 'source_query',
     },
     {
-        name: 'Query Examples',
+        name: 'Query Samples',
         key: 'query_examples',
     },
     {
@@ -330,7 +330,7 @@ class DataTableViewComponent extends React.PureComponent<
                     items={tabDefinitions}
                     selectedTabKey={selectedTabKey}
                     onSelect={this.onTabSelected}
-                    className="DataTableView-tabs"
+                    className="DataTableView-tabs wide"
                 />
                 <div className="DataTableView-content">
                     <Container>{contentDOM}</Container>

@@ -9,7 +9,7 @@ import * as dataDocSelectors from 'redux/dataDoc/selector';
 import { DataDocViewersList } from 'components/DataDocViewersList/DataDocViewersList';
 import './DataDocViewersBadge.scss';
 import { Popover } from 'ui/Popover/Popover';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton } from 'ui/Button/Button';
 import { DataDocPermission } from 'lib/data-doc/datadoc-permission';
 import { UserAvatarList } from 'components/UserBadge/UserAvatarList';
 
@@ -72,12 +72,10 @@ class DataDocViewersBadgeComponent extends React.PureComponent<IProps, IState> {
         const accessRequestsByUidLength = Object.keys(accessRequestsByUid)
             .length;
         const shareButtonDOM = (
-            <Button
+            <SoftButton
                 className="viewers-badge-share-button"
                 icon={dataDoc.public ? 'users' : 'lock'}
                 title="Share"
-                color="light"
-                pushable
                 ping={
                     !readonly && accessRequestsByUidLength > 0
                         ? accessRequestsByUidLength.toString()

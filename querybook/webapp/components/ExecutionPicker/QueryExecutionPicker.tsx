@@ -112,11 +112,11 @@ export const QueryExecutionPicker: React.FunctionComponent<IProps> = React.memo(
                             })}
                             onClick={() => onSelection(execution.id)}
                         >
+                            {statusIcon}&nbsp;
                             Execution {execution.id}: {dateString} by
                             <span className="mh4">
                                 <UserName uid={execution.uid} />
                             </span>
-                            {statusIcon}
                         </MenuItem>
                     );
                 }
@@ -124,11 +124,12 @@ export const QueryExecutionPicker: React.FunctionComponent<IProps> = React.memo(
             return (
                 <Menu>
                     <div className="query-execution-item-header flex-row">
-                        <span className="mr8">Hide Failed</span>
                         <ToggleSwitch
                             checked={hideFailed}
                             onChange={setHideFailed}
                         />
+                        &nbsp;
+                        <span>Only show successful executions in this list</span>
                     </div>
                     <div className="query-execution-item-wrapper">
                         {executionItemsDOM}

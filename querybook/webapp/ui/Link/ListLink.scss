@@ -5,7 +5,7 @@
     align-items: center;
     border-left: solid 6px transparent;
     padding: 4px 10px 4px 4px;
-    color: var(--dark-text-color);
+    color: var(--ui-text-color);
     cursor: pointer;
     user-select: none;
 
@@ -22,32 +22,37 @@
             margin-right: 28px;
         }
     }
-    .ListLinkPlaceholder {
-        opacity: 0.7;
-        font-style: italic;
-    }
 
     .Icon {
         flex-shrink: 1;
+
         svg {
             padding: 20%;
         }
     }
 
+    .Icon.ListLink-status-icon {
+        // To keep same size as ListLink without Icon
+        height: 17px;
+        position: relative;
+        top: -4px;
+    }
+
     &.row {
-        padding: 4.5px 10px 4.5px 4.5px;
+        padding: 5px;
+
         .ListLinkText,
         .ListLinkPlaceholder {
             line-height: normal;
             margin-left: 0px;
         }
     }
+
     &.selected {
-        border-color: var(--color-accent-bg);
-        font-weight: var(--bold-font);
+        color: var(--color-accent);
     }
+
     &:hover {
-        background-color: var(--color-accent-bg-hover);
-        color: var(--dark-text-color);
+        color: var(--text-color);
     }
 }

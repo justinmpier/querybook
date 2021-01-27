@@ -1,6 +1,7 @@
 @charset "utf-8";
 #root {
     height: 100%;
+    background: red;
 }
 
 #root,
@@ -36,13 +37,15 @@
 }
 
 .empty-message {
-    margin-top: 20%;
     padding: 0px 20%;
     text-align: center;
-    font-size: var(--xxxlarge-text-size);
+    font-size: var(--xlarge-text-size);
     font-weight: bold;
-    color: var(--border-color);
+    color: var(--text-empty-message-color);
     user-select: none;
+    line-height: normal;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .ReactVirtualized__Grid {

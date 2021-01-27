@@ -16,6 +16,7 @@ export const SearchContainer: React.FC = () => {
             tooltip="Search Docs/Tables"
             onClick={navigateToSearch}
             title="Search"
+            standardSize
         />
     );
 };

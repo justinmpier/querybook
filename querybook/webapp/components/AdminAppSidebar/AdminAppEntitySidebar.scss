@@ -17,6 +17,8 @@
             letter-spacing: 1px;
             cursor: pointer;
             user-select: none;
+            padding: unquote("calc(var(--padding) * 2)");
+            margin-bottom: var(--padding);
         }
         .AdminAppEntitySidebar-item {
             margin-left: 2.5px;

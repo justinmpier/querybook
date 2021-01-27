@@ -115,7 +115,7 @@ class QuerySnippetInsertionModalComponent extends React.PureComponent<
         } else {
             querySnippetViewDOM = (
                 <div className="empty-message">
-                    Choose a template on the left.
+                    Choose a Snippet on the left.
                 </div>
             );
         }
@@ -124,7 +124,7 @@ class QuerySnippetInsertionModalComponent extends React.PureComponent<
             <div className={'QuerySnippetInsertionModal '}>
                 <div className="query-snippet-insertion-header horizontal-space-between">
                     <div>
-                        <Title size={3}>Query Template</Title>
+                        <Title size={3}>Snippet Library</Title>
                     </div>
                     <div>
                         <Tabs

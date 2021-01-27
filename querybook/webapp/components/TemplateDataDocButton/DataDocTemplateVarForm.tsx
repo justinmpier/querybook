@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import { FormField, FormFieldInputSection } from 'ui/Form/FormField';
 import { Title } from 'ui/Title/Title';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton, TextButton } from 'ui/Button/Button';
 import { InfoButton } from 'ui/Button/InfoButton';
 import { IconButton } from 'ui/Button/IconButton';
 import './DataDocTemplateVarForm.scss';
@@ -53,13 +53,13 @@ export const DataDocTemplateVarForm: React.FunctionComponent<IDataDocTemplateVar
                                           <FormFieldInputSection>
                                               <Field
                                                   name={`variables.${index}[0]`}
-                                                  placeholder="Insert name"
+                                                  placeholder="Variable's Name"
                                               />
                                           </FormFieldInputSection>
                                           <FormFieldInputSection>
                                               <Field
                                                   name={`variables.${index}[1]`}
-                                                  placeholder="Insert value"
+                                                  placeholder="Value"
                                               />
                                           </FormFieldInputSection>
                                       </FormField>
@@ -76,12 +76,12 @@ export const DataDocTemplateVarForm: React.FunctionComponent<IDataDocTemplateVar
                               ))
                             : null;
                         const controlDOM = isEditable && (
-                            <div className="flex-right">
-                                <Button
-                                    title="Add New Variable"
+                            <div className="horizontal-space-between">
+                                <TextButton
+                                    title="+ Add New Variable"
                                     onClick={() => arrayHelpers.push(['', ''])}
                                 />
-                                <Button
+                                <SoftButton
                                     onClick={() => handleSubmit()}
                                     title="Save"
                                     disabled={isSubmitting || !isValid}
@@ -109,39 +109,51 @@ export const DataDocTemplateVarForm: React.FunctionComponent<IDataDocTemplateVar
                     <Form>
                         <div className="horizontal-space-between">
                             <div>
-                                <Title>Templated Variables</Title>
+                                <Title>Variables</Title>
                             </div>
                             <div>
                                 <InfoButton layout={['bottom', 'right']}>
                                     <div>
                                         <p>
-                                            {'Put {{variable_name}} in your query and it will get substituted with ' +
-                                                'variable_value. Some variables are provided automatically. Such as:'}
+                                            {'Include {{variable_name}} in your query and it will get substituted with ' +
+                                                'its value.'}
+                                            <br/>
+                                            <br/>
+                                            <span>
+                                                Some variables are provided automatically.
+                                            </span>
+                                            <br/>
+                                            <br/>
+                                            <span>
+                                                Such as:
+                                            </span>
                                             <ul>
                                                 <li>
                                                     {
-                                                        '{{today}} which maps to todays date in yyyy-mm-dd'
+                                                        '* {{today}} which maps to todays date in yyyy-mm-dd format. '
                                                     }
                                                 </li>
                                                 <li>
                                                     {
-                                                        "{{yesterday}} which maps to yesterday's date"
+                                                        "* {{yesterday}} which maps to yesterday's date."
                                                     }
                                                 </li>
                                             </ul>
                                         </p>
+                                        <br/>
                                         <p>
                                             {
-                                                'You can also put variable definitions in variables for recursive rendering.'
+                                                'You can also include variables in variables for recursive rendering.'
                                             }
                                         </p>
+                                        <br/>
                                         <p>
                                             <Link
                                                 to={
                                                     'https://jinja.palletsprojects.com/en/2.11.x/templates/'
                                                 }
                                             >
-                                                See complete guide here.
+                                                See the complete guide here.
                                             </Link>
                                         </p>
                                     </div>

@@ -228,7 +228,7 @@ const FavoriteDataDocsSection: React.FC<ICommonSectionProps> = (props) => {
 
     return (
         <div
-            className={isOver ? 'nav-favorite-dragged-over' : ''}
+            className={'DataDocNavigator-favorites ' + (isOver ? 'nav-favorite-dragged-over' : '')}
             ref={dropRef}
         >
             <DataDocNavigatorSection

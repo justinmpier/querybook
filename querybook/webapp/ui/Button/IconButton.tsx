@@ -20,6 +20,7 @@ export interface IIconButtonProps {
     disabled?: boolean;
     active?: boolean;
     noPadding?: boolean;
+    standardSize?: boolean;
     fill?: boolean;
     size?: string | number;
     ping?: boolean | string;
@@ -43,6 +44,7 @@ export const IconButton = React.forwardRef<HTMLAnchorElement, IIconButtonProps>(
             active,
             size,
             noPadding,
+            standardSize,
             fill,
             ping,
             title,
@@ -63,6 +65,7 @@ export const IconButton = React.forwardRef<HTMLAnchorElement, IIconButtonProps>(
             IconButton: true,
             active,
             'no-padding': noPadding,
+            'standard-size': standardSize,
             fill,
             disabled,
             'invert-circle': invertCircle,

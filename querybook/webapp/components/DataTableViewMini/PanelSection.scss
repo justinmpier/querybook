@@ -1,0 +1,14 @@
+.PanelSection {
+    .PanelSection-panel-title {
+        cursor: pointer;
+        padding: 0px var(--padding);
+        text-transform: capitalize;
+        user-select: none;
+        color: var(--ui-text-color);
+        background: var(--color-button-bg);
+        border-radius: var(--border-radius);
+        margin: var(--padding);
+        height: 32px; // TODO: Componentize across sidebars
+        font-weight: bold;
+    }
+}

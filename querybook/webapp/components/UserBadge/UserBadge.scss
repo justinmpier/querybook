@@ -28,4 +28,14 @@
     .UserBadge-names {
         max-width: 180px;
     }
+
+    &:not(.mini) {
+        .user-name {
+            margin-bottom: 2px;
+        }
+    }
+
+    .user-name {
+        text-transform: capitalize;
+    }
 }

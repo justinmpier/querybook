@@ -378,6 +378,7 @@ class DataDocQueryCellComponent extends React.PureComponent<IProps, IState> {
 
         return additionalButtons.length > 0 ? (
             <Dropdown
+                className="DataDocQueryCell-more-button"
                 customButtonRenderer={this.additionalDropDownButtonFormatter}
                 isRight
             >
@@ -513,7 +514,7 @@ class DataDocQueryCellComponent extends React.PureComponent<IProps, IState> {
         const fullScreenButton = (
             <div className="fullscreen-button-wrapper">
                 <Button
-                    icon="maximize"
+                    icon={isFullScreen ? 'minimize-2' : 'maximize-2'}
                     onClick={toggleFullScreen}
                     theme="text"
                     pushable
@@ -545,7 +546,7 @@ class DataDocQueryCellComponent extends React.PureComponent<IProps, IState> {
             query.trim().length === 0 && isEditable ? (
                 <div className="add-snippet-wrapper flex-center">
                     <TextButton
-                        title="Add Template"
+                        title="Insert a Snippet"
                         onClick={this.toggleInsertQuerySnippetModal}
                     />
                 </div>
@@ -556,6 +557,7 @@ class DataDocQueryCellComponent extends React.PureComponent<IProps, IState> {
                 onHide={this.toggleInsertQuerySnippetModal}
                 className="wide"
                 title="Insert Query Snippet"
+                hideClose
             >
                 <QuerySnippetInsertionModal
                     onInsert={this.handleInsertSnippet}

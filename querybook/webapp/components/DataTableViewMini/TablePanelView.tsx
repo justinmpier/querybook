@@ -39,14 +39,14 @@ export const TablePanelView: React.FunctionComponent<ITablePanelViewProps> = ({
         dispatch(dataSourcesActions.fetchDataTableIfNeeded(tableId));
 
     const renderPanelView = () => {
+        const descriptionText =
+            table.description &&
+            (table.description as ContentState).getPlainText() ||
+            'No description found, document this table in its Table Details view.';
         const overviewSection = (
-            <PanelSection title="table">
-                <SubPanelSection title="schema">{schema.name}</SubPanelSection>
-                <SubPanelSection title="name">{table.name}</SubPanelSection>
-                <SubPanelSection title="description" hideIfNoContent>
-                    {table.description
-                        ? (table.description as ContentState).getPlainText()
-                        : ''}
+            <PanelSection title="Description">
+                <SubPanelSection hideIfNoContent>
+                    {descriptionText}
                 </SubPanelSection>
                 <DataTableTags tableId={table.id} readonly />
             </PanelSection>
@@ -119,16 +119,20 @@ interface IStyledColumnRowProps {
 }
 const StyledColumnRow = styled.div<IStyledColumnRowProps>`
     cursor: pointer;
-    margin-left: -32px;
-    padding: 2px 0px 2px 28px;
-    word-break: break-all;
+    line-height: 2;
 
     .column-row-name {
-        color: var(--dark-text-color);
+        color: var(--text-color);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
     .column-row-type {
-        color: var(--light-text-color);
+        color: var(--ui-text-color);
+        font-size: 10px;
+        text-transform: uppercase;
+        margin-left: var(--padding);
     }
 
     ${({ selected }) =>
@@ -151,8 +155,8 @@ const ColumnRow: React.FunctionComponent<{
     onClick: () => any;
     selected?: boolean;
 }> = ({ name, type, onClick, selected }) => (
-    <StyledColumnRow onClick={onClick} selected={selected}>
-        <span className="column-row-name">{name}:</span>
+    <StyledColumnRow className="horizontal-space-between" onClick={onClick} selected={selected}>
+        <span className="column-row-name">{name}</span>
         <span className="column-row-type">{type}</span>
     </StyledColumnRow>
 );

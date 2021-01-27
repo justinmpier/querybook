@@ -9,15 +9,29 @@
         .Landing-greeting {
             margin-left: 4px;
             font-weight: bold;
-            font-size: var(--xlarge-text-size);
+            font-size: var(--med-text-size);
+            color: var(--light-text-color);
+        }
+
+        .Landing-subtitle {
+            margin-left: 4px;
+            font-weight: bold;
+            margin-top: -0.2em;
+            font-family: var(--family-display);
+            letter-spacing: var(--xxxlarge-display-spacing);
+            font-size: var(--xxxlarge-text-size);
+        }
+
+        .Landing-logo {
+            display: none;
         }
 
         .Landing-desc {
             margin-left: 4px;
-
             font-weight: bold;
             font-size: var(--large-text-size);
             color: var(--light-text-color);
+            display: none;
         }
     }
 

@@ -79,16 +79,23 @@ export const DataDocLeftSidebar: React.FunctionComponent<IProps> = ({
         );
     } else {
         contentDOM = (
-            <div className={'sidebar-content sidebar-content-default'}>
-                <Button
+            <div className={'sidebar-content sidebar-content-default vertical-space-between'}>
+                {/* <Button
                     className="contents-toggle-button"
                     icon="list"
                     attached="left"
                     onClick={() => setContentState('contents')}
                     aria-label="Show doc contents"
                     data-balloon-pos="right"
+                /> */}
+                <IconButton
+                    className="contents-toggle-button"
+                    icon={"list"}
+                    tooltip={"Table of contents"}
+                    tooltipPos="right"
+                    onClick={() => setContentState('contents')}
+                    title="TOC"
                 />
-                <br />
                 <IconButton
                     icon={defaultCollapse ? 'maximize' : 'minimize'}
                     tooltip={
@@ -98,6 +105,7 @@ export const DataDocLeftSidebar: React.FunctionComponent<IProps> = ({
                     }
                     tooltipPos="right"
                     onClick={onCollapse}
+                    title={defaultCollapse ? 'Expand' : 'Collapse'}
                 />
             </div>
         );

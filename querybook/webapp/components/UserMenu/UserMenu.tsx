@@ -8,7 +8,6 @@ import { TooltipDirection } from 'const/tooltip';
 
 import { UserBadge } from 'components/UserBadge/UserBadge';
 import { TokenCreation } from 'components/Token/TokenCreation';
-import { UserAvatar } from 'components/UserBadge/UserAvatar';
 
 import { Link } from 'ui/Link/Link';
 import { MenuInfoItem, Menu, MenuDivider, MenuItem } from 'ui/Menu/Menu';
@@ -17,6 +16,7 @@ import { Popover, PopoverLayout } from 'ui/Popover/Popover';
 import { ToggleSwitch } from 'ui/ToggleSwitch/ToggleSwitch';
 
 import './UserMenu.scss';
+import { IconButton } from 'ui/Button/IconButton';
 
 interface IUserMenuProps {
     tooltipPos?: TooltipDirection;
@@ -123,17 +123,16 @@ export const UserMenu: React.FC<IUserMenuProps> = ({
 
     return (
         <>
-            <span
-                className="UserMenu flex-column"
+            <IconButton
+                className="UserMenu"
                 ref={selfRef}
+                icon="settings"
+                tooltipPos="right"
+                tooltip="Settings"
                 onClick={toggleUserMenuPopover}
-                aria-label={'User Settings'}
-                data-balloon-pos={tooltipPos}
-            >
-                <UserAvatar uid={userInfo.uid} />
-
-                <span className="user-menu-title">Settings</span>
-            </span>
+                title="Settings"
+                standardSize
+            />
             {tokenCreationModalDOM}
             {userSettingsPopover}
         </>

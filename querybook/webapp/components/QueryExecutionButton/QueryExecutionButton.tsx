@@ -155,6 +155,7 @@ class QueryExecutionButtonComponent extends React.PureComponent<
             <>
                 <span className="QueryExecutionButton">
                     <IconButton
+                        className="EntitySidebar-sidebar-mode-icon"
                         onClick={onClick || this.togglePanel}
                         ref={this.buttonRef}
                         tooltip={buttonTitle}
@@ -167,6 +168,7 @@ class QueryExecutionButtonComponent extends React.PureComponent<
                                 : null
                         }
                         title="Runs"
+                        standardSize
                     />
                 </span>
                 {panel}

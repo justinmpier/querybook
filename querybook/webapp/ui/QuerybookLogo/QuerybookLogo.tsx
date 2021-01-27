@@ -11,26 +11,15 @@ const StyledQuerybookLogo = styled.span`
     .querybook-brandmark {
         width: ${({ size }) => `${size * 1.3}rem`};
         height: ${({ size }) => `${size * 1.3}rem`};
+        margin-right: 0.2em;
     }
 
     .querybook-wordmark {
         font-weight: 700;
-
         letter-spacing: -0.05em;
         padding-right: 0.05em;
-
         user-select: none;
-        color: var(--color-accent);
-
-        background: -webkit-linear-gradient(
-            45deg,
-            var(--color-accent-text),
-            var(--color-accent),
-            var(--color-accent-bg)
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #C62F81; // TODO: Revisit once updating logo
     }
 `;
 

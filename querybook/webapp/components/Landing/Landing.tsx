@@ -42,7 +42,7 @@ const DefaultLanding: React.FC = ({ children }) => {
             environment: currentEnvironmentSelector(state),
         };
     });
-    const descriptionDOM = 'Data made simple.';
+    const descriptionDOM = 'The Big Data IDE.';
 
     const dispatch = useDispatch();
     React.useEffect(() => {
@@ -80,8 +80,10 @@ const DefaultLanding: React.FC = ({ children }) => {
     const LandingHeader = (
         <div className="Landing-top">
             <div className="Landing-greeting">
-                Hi {titleize(userInfo.fullname || userInfo.username)}, welcome
-                to
+                Hi {titleize(userInfo.fullname || userInfo.username)},
+            </div>
+            <div className="Landing-subtitle">
+                Welcome back
             </div>
             <div className="Landing-logo">
                 <QuerybookLogo size={5} />

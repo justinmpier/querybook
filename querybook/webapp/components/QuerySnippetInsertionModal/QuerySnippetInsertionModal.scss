@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     max-height: 100%;
+    padding: unquote("calc(2 * var(--padding))");
 
     .query-snippet-insertion-content {
         flex: 1;
@@ -19,14 +20,20 @@
 
         .query-snippet-view-wrapper {
             flex: 1;
-            padding: 16px;
             overflow: auto;
+            padding: unquote("calc(2 * var(--padding))");
+            background: var(--color-primary);
+            border-radius: var(--border-radius);
+            margin-left: 10px;
+        }
+
+        .Sidebar {
+            border-right: 0px;
         }
     }
 
     .query-snippet-insertion-header {
-        padding: 12px 16px;
-        border-bottom: var(--border);
+        padding: var(--padding) 0px;
     }
 
     .snippet-author-info {

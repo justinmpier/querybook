@@ -198,7 +198,9 @@ export const DataDocNavigatorBoardSection: React.FC<INavigatorBoardSectionProps>
     return (
         <div className="DataDocNavigatorBoardSection">
             {sectionHeader}
-            {boardsDOM}
+            <div className="DataDocNavigatorBoardSection-list">
+                {boardsDOM}
+            </div>
             {showCreateModal ? (
                 <BoardCreateUpdateModal
                     onComplete={() => setShowCreateModal(false)}
@@ -284,9 +286,7 @@ const NavigatorBoardView: React.FunctionComponent<{
                 onClick={() => setCollapsed(!collapsed)}
                 className="board-header-title flex1"
             >
-                <Title size={7} className="one-line-ellipsis">
-                    {board.name}
-                </Title>
+                {board.name}
             </div>
 
             <div className="header-control-section">
@@ -511,8 +511,8 @@ const BoardExpandableList: React.FunctionComponent<{
                 </div>
             )
         ) : (
-            <div className="board-item-list-empty ph12">
-                No items in this list yet.
+            <div className="board-item-list-empty ph12 empty-message">
+                Drag and drop DataDocs &amp; tables here.
             </div>
         );
 

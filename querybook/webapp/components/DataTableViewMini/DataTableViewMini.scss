@@ -1,19 +1,43 @@
 .DataTableViewMini {
     display: flex;
     flex-direction: column;
-    background: var(--light-bg-color);
+    margin-left: unquote("calc(0px - var(--padding))");
+    margin-right: unquote("calc(0px - var(--padding))");
+    margin-bottom: unquote("calc(0px - var(--padding))");
+
+    .DataTableViewMini-border {
+        border-radius: 1000px;
+        background: var(--border-color);
+        margin: auto;
+        display: block;
+        width: 30px;
+        flex: 0 0 5px;
+    }
 
     .DataTableViewMini-header {
         position: sticky;
         top: 0;
-        background: var(--light-bg-color);
+        padding: var(--padding);
+        padding-bottom: 0px;
+        justify-content: center;
+
+        .IconButton {
+            position: absolute;
+            right: 20px;
+        }
     }
 
     .DataTableViewMini-content {
         overflow-y: auto;
+        flex: 1;
     }
+
     .DataTableTags {
         margin-top: -4px;
         margin-left: -2px;
+    }
+
+    .table-details-button {
+        margin-right: var(--padding);
     }
 }

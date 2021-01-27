@@ -40,7 +40,7 @@ export const InfoMenuRoute: React.FunctionComponent<RouteComponentProps> = ({
             : 'Frequently Asked Questions';
 
     return isModal ? (
-        <Modal onHide={history.goBack} title={title} className="with-padding">
+        <Modal onHide={history.goBack} title={title} className="with-padding" hideClose>
             {getContentDOM()}
         </Modal>
     ) : (

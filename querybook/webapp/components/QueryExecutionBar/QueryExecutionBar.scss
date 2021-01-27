@@ -3,4 +3,12 @@
 .QueryExecutionBar {
     display: flex;
     align-items: center;
+
+    .QueryExecutionBar-date {
+        color: var(--ui-text-color);
+    }
+
+    .CopyButton {
+        margin-left: var(--padding);
+    }
 }

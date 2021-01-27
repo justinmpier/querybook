@@ -2,12 +2,10 @@
 
 .StatementExecutionPicker {
     .custom-statement-picker-button {
-        font-weight: 700;
-        text-transform: uppercase;
         cursor: pointer;
-
         display: flex;
         align-items: center;
+        color: var(--ui-text-color);
 
         .dropdown-icon {
             margin-left: 0.5em;

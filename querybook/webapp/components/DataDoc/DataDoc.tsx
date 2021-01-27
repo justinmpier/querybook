@@ -389,9 +389,11 @@ class DataDocComponent extends React.PureComponent<IProps, IState> {
             dataDoc: { id },
         } = this.props;
         sendConfirm({
-            header: 'Clone DataDoc?',
+            header: 'Clone this DataDoc?',
             message:
                 'You will be redirected to the new Data Doc after cloning.',
+            confirmText: 'Yes, clone',
+            confirmIcon: 'copy',
             onConfirm: () =>
                 toast.promise(
                     cloneDataDoc(id).then((dataDoc) =>

@@ -76,4 +76,4 @@ export interface IDataDocEditor {
     write: boolean;
 }
 
-export const emptyDataDocTitleMessage = '(Untitled)';
+export const emptyDataDocTitleMessage = 'Untitled';

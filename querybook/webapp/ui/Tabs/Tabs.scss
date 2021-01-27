@@ -1,21 +1,27 @@
 .Tabs {
     cursor: default;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    padding: unquote("calc(var(--padding) / 2)");
+    display: inline-flex;
+
     ul {
         display: flex;
         flex-direction: row;
         text-align: center;
-        font-weight: var(--bold-font);
 
         li {
-            padding: 8px 8px 4px;
+            padding: var(--padding);
+            // To make it visually the same padding even if different
+            padding-left: unquote("calc(var(--padding) * 1.5)");
+            padding-right: unquote("calc(var(--padding) * 1.5)");
             box-sizing: border-box;
-            border-bottom: solid 1px transparent;
             display: flex;
             flex-direction: column;
             justify-content: center;
 
             a {
-                color: var(--text-color);
+                color: var(--ui-text-color);
 
                 .Icon {
                     & ~ span {
@@ -31,15 +37,18 @@
             }
 
             &.active {
-                border-bottom-color: var(--select-border-color);
+                // border-bottom-color: var(--select-border-color);
+                background: var(--color-button-bg);
+                border-radius: 5px;
+
                 a {
-                    color: var(--text-color);
+                    // color: var(--color-accent);
                 }
             }
 
             &:not(.active):hover {
                 cursor: pointer;
-                border-bottom-color: var(--hover-border-color);
+
                 a {
                     color: var(--text-color);
                 }
@@ -113,9 +122,8 @@
     &.wide {
         ul {
             width: 100%;
+
             li {
-                padding-left: 0;
-                padding-right: 0;
                 flex: 1;
             }
         }

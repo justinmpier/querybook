@@ -9,7 +9,7 @@
     &.transparent {
         .DebouncedInput {
             input {
-                padding: 12px;
+                padding: var(--padding);
             }
         }
     }
@@ -20,6 +20,7 @@
     }
 
     .search-bar-clear-sep {
+        display: none;
         border-left: var(--border);
         height: 20px;
     }

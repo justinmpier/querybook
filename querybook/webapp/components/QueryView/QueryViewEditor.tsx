@@ -124,7 +124,7 @@ export const QueryViewEditor: React.FunctionComponent<{
         <div className="editor-section-header horizontal-space-between">
             <div>{queryExecutionTitleDOM}</div>
 
-            <div className="horizontal-space-between">
+            <div className="horizontal-space-between flex-row with-padding">
                 {shareExecutionButton}
                 <Button onClick={exportToAdhocQuery} title="Edit" />
                 {goToDataDocButton}

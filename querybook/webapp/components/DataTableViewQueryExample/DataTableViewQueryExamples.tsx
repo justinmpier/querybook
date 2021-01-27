@@ -141,9 +141,9 @@ export const DataTableViewQueryExamples: React.FunctionComponent<IProps> = ({
             </div>
             <div className="filter-selection-section mb16 mt4">
                 <div>
-                    <Title subtitle size={6}>
+                    <div className="DataTableViewQueryExamples-header">
                         Top users
-                    </Title>
+                    </div>
                     <DataTableViewQueryUsers
                         tableId={tableId}
                         onClick={setUidFilter}
@@ -152,9 +152,9 @@ export const DataTableViewQueryExamples: React.FunctionComponent<IProps> = ({
                 </div>
 
                 <div className="mt12">
-                    <Title subtitle size={6}>
+                    <div className="DataTableViewQueryExamples-header">
                         Top co-occuring tables
-                    </Title>
+                    </div>
                     <DataTableViewQueryConcurrences
                         tableId={tableId}
                         onClick={setTableIdFilter}
@@ -168,6 +168,9 @@ export const DataTableViewQueryExamples: React.FunctionComponent<IProps> = ({
     return (
         <div className="DataTableViewQueryExamples">
             {queryExampleFiltersSection}
+            <div className="DataTableViewQueryExamples-header">
+                Queries
+            </div>
             <QueryExamplesList tableId={tableId} filters={filters} />
         </div>
     );

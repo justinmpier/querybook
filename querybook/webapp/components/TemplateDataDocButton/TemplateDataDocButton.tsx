@@ -25,7 +25,8 @@ export const TemplateDataDocButton: React.FunctionComponent<IProps> = ({
             onHide={() => {
                 setShowTemplateForm(false);
             }}
-            title="Configure Template"
+            // title="Configure Variables"
+            hideClose
         >
             <DataDocTemplateVarForm
                 isEditable={isEditable}
@@ -43,9 +44,10 @@ export const TemplateDataDocButton: React.FunctionComponent<IProps> = ({
             <IconButton
                 icon="code"
                 onClick={() => setShowTemplateForm(true)}
-                tooltip="Set Templated Variables"
+                tooltip="Define and set variables"
                 tooltipPos="left"
-                title="Template"
+                title="Variables"
+                standardSize
             />
 
             {templatedModal}

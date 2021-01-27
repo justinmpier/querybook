@@ -1,23 +1,37 @@
 .QuerySnippetNavigator {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     .snippets-wrapper {
         flex: 1;
         position: relative;
+        margin-top: var(--padding);
     }
 
     .snippet-search {
-        border-bottom: var(--border);
+        margin-bottom: var(--padding);
+        background: var(--color-button-bg);
+        border-radius: var(--border-radius);
+        padding-right: 5px;
+        height: 45px;
+        position: relative;
+
         .SearchBar {
             flex-grow: 1;
         }
+
         .IconButton {
             padding: 4px;
+
             .feather-filter {
                 padding: 1px;
             }
         }
+    }
+
+    .Tabs {
+        width: 100%;
     }
 }
 

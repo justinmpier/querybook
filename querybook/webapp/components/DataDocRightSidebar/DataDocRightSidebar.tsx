@@ -116,6 +116,7 @@ export const DataDocRightSidebar: React.FunctionComponent<IProps> = ({
                     tooltip={'Clone'}
                     tooltipPos={'left'}
                     title="Clone"
+                    standardSize
                 />
                 {deleteButtonDOM}
             </div>

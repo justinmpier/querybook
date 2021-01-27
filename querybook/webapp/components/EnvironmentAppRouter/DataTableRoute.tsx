@@ -18,7 +18,7 @@ export const DataTableRoute: React.FunctionComponent<RouteComponentProps> = ({
             onHide={history.goBack}
             type="standard"
             className="wide"
-            title="Data Table Details"
+            hideClose
         >
             {contentDOM}
         </Modal>

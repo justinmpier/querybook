@@ -1,6 +1,14 @@
 @import './../../scss_variables.scss';
 
 .DataDocStatementExecutionBar {
+    // & > * {
+    //     margin-left: var(--padding);
+
+    //     &:first-child {
+    //         margin-left: 0px;
+    //     }
+    // }
+
     .Dropdown-trigger {
         display: flex;
     }

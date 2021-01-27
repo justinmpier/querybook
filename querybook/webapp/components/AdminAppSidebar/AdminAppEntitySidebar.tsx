@@ -48,7 +48,7 @@ export const AdminAppEntitySidebar: React.FunctionComponent<IAdminAppEntitySideb
                     onClick={() => history.push('/admin/')}
                 >
                     <QuerybookLogo size={1.3} withBrandMark />
-                    <div>ADMIN APP</div>
+                    <div>Admin Tools</div>
                 </div>
                 {makeSidebarItem('environment', 'box')}
                 {makeSidebarItem('metastore', 'database')}

@@ -52,16 +52,22 @@
         padding: 36px 12px;
         overflow: hidden;
 
+        .IconButton,
+        .ImpressionWidget {
+            margin-left: 8px;
+        }
+
         .data-doc-header {
             padding: 36px 12px;
-            border-bottom: var(--border);
-            color: var(--light-text-color);
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-top: 10px;
+            border-radius: var(--border-radius);
+            margin-bottom: 25px;
 
             .data-doc-header-top {
                 .data-doc-header-time {
-                    text-transform: uppercase;
-                    font-size: var(--text-size);
-                    font-weight: bold;
+                    color: var(--ui-text-color);
                     padding-left: 4px;
                 }
                 .data-doc-header-users {
@@ -75,21 +81,23 @@
             .ImpressionWidget {
                 margin-left: 8px;
             }
+
             .favorite-icon-button {
                 &.favorite-icon-button-favorited {
-                    color: var(--color-yellow);
+                    color: var(--color-accent);
+
                     .Icon {
                         svg {
-                            fill: var(--color-yellow);
+                            fill: var(--color-accent);
                         }
                     }
 
                     &:hover,
                     &.active {
                         .Icon {
-                            color: var(--color-yellow-light);
+                            color: var(--text-color);
                             svg {
-                                fill: var(--color-yellow-light);
+                                fill: var(--text-color);
                             }
                         }
                     }
@@ -97,12 +105,13 @@
             }
 
             .data-doc-title {
-                color: var(--light-text-color);
+                color: var(--color-text-titles-big);
                 font-size: var(--xxxlarge-text-size);
                 font-weight: bold;
+                font-family: var(--family-display);
 
                 &::placeholder {
-                    color: var(--light-text-color);
+                    color: var(--empty-text-color);
                 }
             }
         }
@@ -110,8 +119,9 @@
         .data-doc-container {
             .data-doc-cell-container-pair {
                 &.highlight-cell {
-                    animation-name: highlight-fade;
-                    animation-duration: 5s;
+                    border: 2px solid var(--color-accent);
+                    border-radius: var(--border-radius);
+                    margin: -2px;
                 }
 
                 position: relative;
@@ -121,10 +131,50 @@
                             opacity: 1;
                         }
                     }
+
+                    .fullscreen-button-wrapper {
+                        opacity: 1;
+                    }
+
+                    .add-snippet-wrapper {
+                        opacity: 1;
+                    }
+
+                    .DataDocQueryCell {
+                        .DataDocQueryCell-more-button {
+                            opacity: 1;
+                        }
+
+                        .QueryRunButton {
+                            opacity: 1;
+                        }
+                    }
                 }
 
                 &.data-doc-cell-container-pair-final {
                     min-height: 48px;
+                }
+
+                .add-snippet-wrapper {
+                    opacity: 0;
+                    transition: opacity 0.2s ease-out;
+                }
+
+                .fullscreen-button-wrapper {
+                    opacity: 0;
+                    transition: opacity 0.2s ease-out;
+                }
+
+                .DataDocQueryCell {
+                    .DataDocQueryCell-more-button {
+                        opacity: 0;
+                        transition: opacity 0.2s ease-out;
+                    }
+
+                    .QueryRunButton {
+                        opacity: 0;
+                        transition: opacity 0.2s ease-out;
+                    }
                 }
 
                 .data-doc-cell {
@@ -152,6 +202,7 @@
 
                     .block-crud-buttons {
                         opacity: 0;
+                        transition: opacity 0.2s ease-out;
                         top: -17px;
                         position: relative;
                         text-align: center;

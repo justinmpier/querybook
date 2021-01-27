@@ -1,4 +1,9 @@
 .DataTableViewQueryExamples {
+
+    .DataTableViewQueryExamples-header {
+        font-weight: bold;
+    }
+
     .filter-selection-section {
         .Button.active {
             border-color: var(--color-accent-text);
@@ -8,7 +13,11 @@
 
     .DataTableViewQueryExamples-item {
         position: relative;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        background: var(--bg-color);
+        padding: var(--padding);
+        border-radius: var(--border-radius);
 
         .DataTableViewQueryExamples-query {
             height: auto;
@@ -18,14 +27,25 @@
         }
 
         .DataTableViewQueryExamples-info {
-            text-align: right;
-            margin-right: 12px;
+            text-align: left;
+            margin-right: var(--padding);
+            color: var(--ui-text-color);
+            margin-top: 10px;
         }
 
         .IconButton {
             position: absolute;
             top: 0px;
             right: 20px;
+        }
+
+        .CodeMirror {
+            border-radius: var(--border-radius);
+
+            &.cm-s-monokai {
+                background: var(--color-secondary);
+                color: var(--text-color);
+            }
         }
     }
 }

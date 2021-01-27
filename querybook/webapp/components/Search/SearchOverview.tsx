@@ -134,7 +134,7 @@ export const SearchOverview: React.FunctionComponent = () => {
     const SEARCH_TABS = queryMetastores.length
         ? [
               {
-                  name: 'DataDoc',
+                  name: 'DataDocs',
                   key: SearchType.DataDoc,
               },
               {
@@ -144,7 +144,7 @@ export const SearchOverview: React.FunctionComponent = () => {
           ]
         : [
               {
-                  name: 'DataDoc',
+                  name: 'DataDocs',
                   key: SearchType.DataDoc,
               },
           ];
@@ -193,7 +193,6 @@ export const SearchOverview: React.FunctionComponent = () => {
                     hasIcon={isLoading}
                     hasClearSearch={true}
                     placeholder={placeholder}
-                    transparent
                     autoFocus
                 />
             </div>
@@ -210,6 +209,7 @@ export const SearchOverview: React.FunctionComponent = () => {
                 items={SEARCH_TABS}
                 selectedTabKey={searchType}
                 onSelect={onSearchTabSelect}
+                wide
             />
         </div>
     );
@@ -217,7 +217,11 @@ export const SearchOverview: React.FunctionComponent = () => {
     const searchSettingsDOM = (
         <div className="search-settings">
             {['table_name', 'description', 'column'].map((setting) => {
-                const label = setting.replace(/_/g, ' ');
+                const label = {
+                    'table_name': 'Table name',
+                    'description': 'Table description',
+                    'column': 'Column name'
+                }[setting];
                 return (
                     <div
                         className="search-settings-toggle horizontal-space-between"
@@ -482,7 +486,7 @@ export const SearchOverview: React.FunctionComponent = () => {
                 </div>
                 <div className="search-filter">
                     <span className="filter-title">
-                        Search Settings
+                        Search in
                         <hr className="dh-hr" />
                     </span>
                     {searchSettingsDOM}
@@ -513,7 +517,7 @@ export const SearchOverview: React.FunctionComponent = () => {
                 <div className="search-result-top horizontal-space-between">
                     <span className="search-result-count">
                         <PrettyNumber val={numberOfResult} />{' '}
-                        {numberOfResult <= 1 ? 'result' : 'results'}
+                        {numberOfResult == 1 ? 'result' : 'results'}
                     </span>
                     <span>{orderByDOM}</span>
                 </div>

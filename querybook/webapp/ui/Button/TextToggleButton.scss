@@ -3,6 +3,12 @@
     color: var(--light-text-color);
     font-weight: var(--bold-font);
     user-select: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
 
     &.active {
         color: var(--color-accent-text);

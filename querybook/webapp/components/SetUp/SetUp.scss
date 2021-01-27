@@ -3,6 +3,9 @@
     height: 100%;
     .SetUp-message {
         font-size: var(--xxxlarge-text-size);
+        letter-spacing: var(--xxxlarge-display-spacing);
         margin: 24px;
+        font-family: var(--family-display);
+        font-weight: bold;
     }
 }

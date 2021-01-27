@@ -1,15 +1,18 @@
 .Modal {
     .Modal-title {
-        padding: 8px 8px 8px 16px;
-        min-height: 38px;
-        background-color: var(--light-bg-color);
-        border-bottom: var(--border);
+        background-color: var(--bg-color-secondary);
+        min-height: 62px; // This is dependent on Tabs height + 2 --padding
+        padding: var(--padding);
+        padding-left: unquote("calc(2 * var(--padding))");
+        display: flex;
+        align-items: center;
     }
 
     .Modal-close {
         position: absolute;
-        right: 8px;
-        top: 8px;
+        // Visually centered with the tabs/title
+        right: 19px;
+        top: 19px;
         padding: 0;
     }
 
@@ -49,7 +52,7 @@
 
         .Modal-background {
             background-color: var(--modal-bg-color);
-            opacity: 0.75;
+            opacity: var(--modal-bg-opacity);
         }
 
         &.is-active .Modal-box {
@@ -63,17 +66,17 @@
             max-width: var(--max-width);
             max-height: 84vh;
             margin: 0 auto;
-            border: var(--border);
-            border-radius: var(--border-radius);
-            background-color: var(--bg-color);
+            border-radius: 10px; // I think it's ok for Modals to differ
+            background-color: var(--bg-color-secondary);
             overflow-y: hidden;
             display: flex;
             flex-direction: column;
             position: relative;
-
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
             opacity: 0;
-            transform: translate(0, 5vh);
-            transition: all 0.2s ease-out;
+            // Animating takes extra time so disabling by default
+            // transform: translate(0, 5vh);
+            // transition: all 0.2s ease-out;
 
             .Modal-content {
                 max-height: inherit;

@@ -2,13 +2,16 @@ import React, { useCallback, useRef, useEffect } from 'react';
 
 import { useEvent } from 'hooks/useEvent';
 import { matchKeyPress } from 'lib/utils/keyboard';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton, TextButton } from 'ui/Button/Button';
 import { Modal } from 'ui/Modal/Modal';
 import './ConfirmationMessage.scss';
 
 export interface IConfirmationMessageProps {
     header?: React.ReactChild;
     message?: React.ReactChild;
+    confirmText?: string;
+    confirmIcon?: string;
+    isDestructiveAction?: boolean;
 
     // event when user clicks confirm
     onConfirm?: () => any;
@@ -24,6 +27,9 @@ export interface IConfirmationMessageProps {
 export const ConfirmationMessage: React.FunctionComponent<IConfirmationMessageProps> = ({
     header = 'Are you sure?',
     message = '',
+    confirmText = 'Confirm',
+    confirmIcon = 'check',
+    isDestructiveAction = false,
     onConfirm,
     onDismiss,
     onHide,
@@ -60,19 +66,24 @@ export const ConfirmationMessage: React.FunctionComponent<IConfirmationMessagePr
 
     useEvent('keydown', onEnterPress);
 
+    const destructiveActionProps = isDestructiveAction ? {
+        color: 'destructive',
+    } : {};
+
     const actionButtons = [
-        <Button
+        <TextButton
             onClick={onCloseButtonClick(false)}
-            icon="x"
-            title="Cancel"
+            // icon="x"
+            title="Cancel &amp; Dismiss"
             key="cancel"
-            color="cancel"
+            // color="cancel"
         />,
-        <Button
-            color="confirm"
+        <SoftButton
+            // color="confirm"
+            {...destructiveActionProps}
             onClick={onCloseButtonClick(true)}
-            icon="check"
-            title="Confirm"
+            icon={confirmIcon}
+            title={confirmText}
             key="confirm"
         />,
     ];
@@ -96,7 +107,7 @@ export const ConfirmationMessage: React.FunctionComponent<IConfirmationMessagePr
                     <div className="confirmation-header">{header}</div>
                     <div className="confirmation-message">{message}</div>
                 </div>
-                <div className="confirmation-buttons flex-right">
+                <div className="confirmation-buttons horizontal-space-between">
                     {actionsDOM}
                 </div>
             </div>

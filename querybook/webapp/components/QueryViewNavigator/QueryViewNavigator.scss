@@ -10,9 +10,12 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
-
-        padding: 2px 0px 2px 8px;
+        margin-bottom: var(--padding);
+        background: var(--color-button-bg);
+        border-radius: var(--border-radius);;
+        padding-right: 5px;
+        height: 45px; //TODO: Standardize inputs
+        align-items: center;
 
         .QueryViewFilter-tags,
         .QueryViewFilter-icons {
@@ -47,20 +50,22 @@
     }
 
     .no-result-message {
+        color: var(--empty-text-color);
         text-align: center;
-        font-size: var(--xlarge-text-size);
-        user-select: none;
-
-        padding: 16px;
         font-weight: bold;
-        color: var(--border-color);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 }
 
 .QueryResult {
     cursor: pointer;
-    border-bottom: var(--border);
-    padding: 4px 12px;
+    padding: var(--padding);
+    margin-bottom: var(--padding);
+    border-radius: var(--border-radius);
+    background-color: var(--color-button-bg);
 
     &:hover,
     &.selected {
@@ -74,5 +79,9 @@
     .query-context {
         @include ellipsis(3);
         word-break: break-all;
+    }
+
+    .QueryResult-time {
+        color: var(--ui-text-color);
     }
 }

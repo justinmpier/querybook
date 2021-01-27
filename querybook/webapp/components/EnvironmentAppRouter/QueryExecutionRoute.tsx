@@ -17,7 +17,7 @@ export const QueryExecutionRoute: React.FunctionComponent<RouteComponentProps> =
     const contentDOM = <QueryView queryId={queryId} />;
 
     return isModal ? (
-        <Modal type="standard" onHide={history.goBack}>
+        <Modal type="standard" onHide={history.goBack} hideClose>
             {contentDOM}
         </Modal>
     ) : (

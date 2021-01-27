@@ -74,10 +74,10 @@ export const ChangeLog: React.FunctionComponent = () => {
     ));
     const changeLogListDOM = changeLogDate ? null : (
         <div className="ChangeLog-list">
-            <div className="ChangeLog-list-title mt12">Change Logs</div>
+            <div className="ChangeLog-list-title mt12">Change Log</div>
             {changeLogList.map((log) => (
                 <div
-                    className="ChangeLog-log-item horizontal-space-between mv8 mh12 pv12"
+                    className="ChangeLog-log-item horizontal-space-between"
                     key={log.date}
                     onClick={() => navigateWithinEnv(`/changelog/${log.date}/`)}
                 >

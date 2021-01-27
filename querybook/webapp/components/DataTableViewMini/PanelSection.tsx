@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
+import './PanelSection.scss';
 
 export interface IPanelSectionProps {
     title: string;
@@ -7,8 +8,7 @@ export interface IPanelSectionProps {
 }
 
 const PanelContentWrapper = styled.div`
-    padding: 5px 32px;
-    word-break: break-all;
+    padding: 0px calc(2 * var(--padding));
 
     ${({ isOpen }) =>
         isOpen
@@ -16,16 +16,6 @@ const PanelContentWrapper = styled.div`
             : `
         display: none;
     `};
-`;
-
-const PanelTitle = styled.p`
-    cursor: pointer;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    user-select: none;
-
-    font-size: var(--med-text-size);
-    font-weight: bold;
 `;
 
 export const PanelSection: React.FunctionComponent<IPanelSectionProps> = ({
@@ -44,7 +34,8 @@ export const PanelSection: React.FunctionComponent<IPanelSectionProps> = ({
 
     const headerDOM = (
         <div onClick={toggleSectionOpen}>
-            <PanelTitle>
+            <div className="PanelSection-panel-title horizontal-space-between">
+                {title}
                 <span>
                     <i
                         className={
@@ -52,12 +43,11 @@ export const PanelSection: React.FunctionComponent<IPanelSectionProps> = ({
                         }
                     />
                 </span>
-                {title}
-            </PanelTitle>
+            </div>
         </div>
     );
     return (
-        <div>
+        <div className="PanelSection">
             {headerDOM}
             <PanelContentWrapper isOpen={isOpen}>
                 {children}
@@ -67,11 +57,9 @@ export const PanelSection: React.FunctionComponent<IPanelSectionProps> = ({
 };
 
 const SubPanelTitle = styled.p`
-    text-transform: uppercase;
+    text-transform: capitalize;
     user-select: none;
-
-    font-size: var(--text-size);
-    color: var(--light-text-color);
+    color: var(--ui-text-color);
 `;
 
 const StyledSubPanelSection = styled.div`

@@ -1,7 +1,7 @@
 .KeyContentDisplay {
     display: flex;
     flex-direction: row;
-    margin-bottom: 8px;
+    margin-top: var(--padding);
     cursor: default;
 
     .KeyContentDisplay-key {

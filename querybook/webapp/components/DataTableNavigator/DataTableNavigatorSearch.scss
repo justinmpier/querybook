@@ -1,10 +1,17 @@
 .DataTableNavigatorSearch {
-    border-bottom: var(--border);
+    margin-bottom: var(--padding);
+    background: var(--color-button-bg);
+    border-radius: var(--border-radius);
+    padding-right: 5px;
+    height: 45px; //TODO: Standardize inputs
+    align-items: center;
+
     > .SearchBar {
         flex-grow: 1;
     }
     > .IconButton {
         padding-right: 12px;
+
         .ping-message {
             top: -5px;
             right: 6px;

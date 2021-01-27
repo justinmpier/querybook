@@ -36,7 +36,7 @@ import { useBrowserTitle } from 'hooks/useBrowserTitle';
 import { FullHeight } from 'ui/FullHeight/FullHeight';
 import { IconButton } from 'ui/Button/IconButton';
 import { Level, LevelItem } from 'ui/Level/Level';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton, TextButton } from 'ui/Button/Button';
 
 import './QueryComposer.scss';
 
@@ -319,13 +319,13 @@ export const QueryComposer: React.FC = () => {
         <div className="QueryComposer-header">
             <div className="QueryComposer-header-vertical">
                 <Level>
-                    <LevelItem>
-                        <Button
+                    <LevelItem margin={"10px"}>
+                        <SoftButton
                             icon="edit-3"
                             title="Format"
                             onClick={handleFormatQuery}
                         />
-                        <Button
+                        <TextButton
                             icon="delete"
                             title="Clear"
                             onClick={() => {
@@ -333,9 +333,9 @@ export const QueryComposer: React.FC = () => {
                                 setExecutionId(null);
                             }}
                         />
-                        <Button
+                        <TextButton
                             icon="plus"
-                            title="Create DataDoc"
+                            title="Create DataDoc from query"
                             onClick={handleCreateDataDoc}
                         />
                     </LevelItem>

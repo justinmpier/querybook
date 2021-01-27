@@ -18,6 +18,7 @@ const StyledTitle = styled.p<IStyledTitleProps>`
     color: ${(props) => props.color || 'var(--text-color)'};
     font-weight: ${(props) => props.weight || 'inherit'};
     font-size: ${(props) => props.size || 'var(--large-text-size)'};
+    font-family: var(--family-display);
 
     & + .Subtitle:not(:empty) {
         margin-top: ${(props) =>
@@ -68,13 +69,13 @@ export const Title: React.FunctionComponent<ITitleProps> = ({
         elementProps['data-balloon-pos'] = 'up';
     }
 
-    const fontWeight = weight ?? (subtitle ? '400' : '600');
+    const fontWeight = weight ?? (subtitle ? 'normal' : 'bold');
     const fontSize = numFontSizeToString[size];
     const fontColor =
         color != null
             ? color
             : subtitle
-            ? 'var(--dark-text-color)'
+            ? 'var(--ui-text-color)'
             : 'var(--text-color)';
     return (
         <StyledTitle

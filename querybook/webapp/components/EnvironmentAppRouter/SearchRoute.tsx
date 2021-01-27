@@ -35,6 +35,7 @@ export const SearchRoute: React.FunctionComponent<RouteComponentProps> = ({
             onHide={history.goBack}
             className="SearchModal no-scroll"
             title={null}
+            hideClose
         >
             {contentDOM}
         </Modal>

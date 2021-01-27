@@ -3,9 +3,7 @@
     overflow: hidden;
 
     .QueryComposer-header {
-        border-bottom: 1px solid var(--border-color);
-        padding: 0px 20px;
-        height: 45px;
+        padding: 10px;
         display: table;
 
         // for safari
@@ -14,6 +12,16 @@
         .QueryComposer-header-vertical {
             display: table-cell;
             vertical-align: middle;
+
+            .Button:nth-child(2),
+            .Button:nth-child(3) {
+                margin-left: unquote("calc(2 * var(--padding))");
+            }
+
+            // .QueryComposer-delete-button,
+            // .QueryComposer-datadoc-button {
+            //     margin-left: var(--padding);
+            // }
         }
     }
 
@@ -27,6 +35,13 @@
             flex: 2;
             overflow: auto;
             position: relative;
+            padding: var(--padding);
+            padding-top: 0px;
+
+            .QueryEditor {
+                border-radius: var(--border-radius);
+                overflow: hidden;
+            }
 
             .SearchAndReplaceBar {
                 position: absolute;
@@ -39,7 +54,6 @@
             height: 100%;
             flex: 1;
             overflow-y: auto;
-            border-top: var(--border);
 
             .QueryComposerExecution {
                 padding: 0px 20px;

@@ -1,18 +1,19 @@
 .data-doc-schedule-tabs {
+    padding: unquote("calc(var(--padding) * 2)");
     position: sticky;
-
     z-index: 10;
     top: 0;
-    background-color: var(--bg-color);
+
+    .Tabs {
+        width: 100%;
+    }
+
     .tabs {
         margin-bottom: 0;
     }
 }
-.DataDocSchedule {
-    height: 100%;
-    padding: 24px;
 
-    .DataDocScheduleForm {
-        margin-bottom: 12px;
-    }
+.DataDocSchedule {
+    padding: unquote("calc(var(--padding) * 2)");
+    padding-top: 0px;
 }

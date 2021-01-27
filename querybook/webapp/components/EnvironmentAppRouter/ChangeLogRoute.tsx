@@ -28,7 +28,12 @@ export const ChangeLogRoute: React.FunctionComponent<RouteComponentProps> = ({
     };
 
     return isModal ? (
-        <Modal onHide={handleHide} title="Change Log" className="with-padding">
+        <Modal
+            onHide={handleHide}
+            title="Change Log"
+            className="with-padding"
+            hideClose
+            >
             <ChangeLog />
         </Modal>
     ) : (

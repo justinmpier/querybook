@@ -30,7 +30,7 @@ export const EntitySidebar: React.FunctionComponent<IEntitySidebarProps> = React
 
         return (
             <div className="EntitySidebar">
-                <div className="apps-list flex-column">
+                <div className="EntitySidebar-top apps-list flex-column">
                     <Route
                         render={({ location }) => (
                             <>
@@ -39,39 +39,39 @@ export const EntitySidebar: React.FunctionComponent<IEntitySidebarProps> = React
                                         icon="home"
                                         tooltip="Home"
                                         tooltipPos="right"
+                                        standardSize
                                         active={
                                             location.pathname ===
                                             `/${environment.name}/`
                                         }
                                     />
                                 </Link>
-                                <Divider
-                                    marginTop="2px"
-                                    marginBottom="2px"
-                                    height="1px"
-                                    color="transparent"
-                                />
+                                <SearchContainer />
                                 <Link to={`/${environment.name}/adhoc/`}>
                                     <div>
                                         <IconButton
                                             icon="edit"
                                             tooltip={'Adhoc Query'}
                                             tooltipPos="right"
+                                            standardSize
                                             active={location.pathname.startsWith(
                                                 `/${environment.name}/adhoc/`
                                             )}
-                                            title="Adhoc"
+                                            title="Query"
                                         />
                                     </div>
                                 </Link>
                             </>
                         )}
                     />
-
+                </div>
+                <div className="EntitySidebar-middle flex-column">
                     <IconButton
+                        className="EntitySidebar-sidebar-mode-icon"
                         icon="file"
                         tooltip="DataDocs"
                         tooltipPos="right"
+                        standardSize
                         active={selectedEntity === 'datadoc'}
                         onClick={() => {
                             onSelectEntity('datadoc');
@@ -80,37 +80,34 @@ export const EntitySidebar: React.FunctionComponent<IEntitySidebarProps> = React
                     />
                     {queryMetastores.length ? (
                         <IconButton
+                            className="EntitySidebar-sidebar-mode-icon"
                             icon="book"
                             tooltip="Tables"
                             tooltipPos="right"
+                            standardSize
                             active={selectedEntity === 'table'}
                             onClick={() => onSelectEntity('table')}
                             title="Tables"
                         />
                     ) : null}
                     <IconButton
+                        className="EntitySidebar-sidebar-mode-icon"
                         icon="code"
                         tooltip="Snippets"
                         tooltipPos="right"
+                        standardSize
                         active={selectedEntity === 'snippet'}
                         onClick={() => onSelectEntity('snippet')}
-                        title="Snippets"
+                        title="Snips"
                     />
                     <QueryExecutionButton
                         onClick={() => onSelectEntity('execution')}
                         active={selectedEntity === 'execution'}
                     />
-                    <Divider
-                        marginTop="8px"
-                        marginBottom="8px"
-                        height="1px"
-                        color="transparent"
-                    />
                 </div>
-                <div className="sidebar-footer flex-column">
-                    <SearchContainer />
-                    <UserMenu />
+                <div className="EntitySidebar-bottom sidebar-footer flex-column">
                     <QueryEngineStatusButton />
+                    <UserMenu />
                     <InfoMenuButton />
                 </div>
             </div>

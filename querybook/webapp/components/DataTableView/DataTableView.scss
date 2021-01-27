@@ -8,13 +8,7 @@
         position: sticky;
         top: 0;
         background-color: var(--bg-color);
-        margin: 0px 16px;
-
-        ul {
-            li {
-                padding: 12px 8px 8px 8px;
-            }
-        }
+        margin: unquote("0px calc(2 * var(--padding))");
     }
 
     .DataTableView-content {

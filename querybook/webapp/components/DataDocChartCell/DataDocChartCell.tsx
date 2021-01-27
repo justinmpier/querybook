@@ -18,7 +18,7 @@ import { DataDocChartCellTable } from './DataDocChartCellTable';
 import { DataDocChartComposer } from './DataDocChartComposer';
 import { InfoButton } from 'ui/Button/InfoButton';
 import { Modal } from 'ui/Modal/Modal';
-import { Title } from 'ui/Title/Title';
+import './DataDocChartCell.scss';
 
 interface IProps {
     context: string;
@@ -181,10 +181,8 @@ export const DataDocChartCell: React.FunctionComponent<IProps> = ({
     const renderChartDOM = () => {
         if (transformedChartData == null || transformedChartData.length === 0) {
             return (
-                <div>
-                    <Title subtitle size={1}>
-                        No Data
-                    </Title>
+                <div className="DataDocChartCell-no-data empty-message">
+                    No data for this chart, please click on Configure Chart.
                 </div>
             );
         }
@@ -229,19 +227,19 @@ export const DataDocChartCell: React.FunctionComponent<IProps> = ({
         <div className={'DataDocChartCell'}>
             <div className="horizontal-space-between">
                 <div>{renderPickerDOM()}</div>
-                <div className="flex-row">
+                <div className="flex-row with-padding">
                     <TextButton
-                        title="Config Chart"
+                        title="Configure Chart"
                         onClick={() => setShowChartComposer(true)}
                         size="small"
                     />
                     <InfoButton>
-                        Chart data comes from the last query cell above.
-                        Configure chart to select desired format.
+                        Chart data can come from the last query cell above.
+                        Configure the chart to select a desired source and options.
                     </InfoButton>
                 </div>
             </div>
-            <div>{renderChartDOM()}</div>
+            <div className="DataDocChartCell-chart">{renderChartDOM()}</div>
             {chartComposerDOM}
         </div>
     );

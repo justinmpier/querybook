@@ -5,18 +5,20 @@
     justify-content: center;
 
     .Dropdown-trigger {
-        cursor: pointer;
+        cursor: default;
+        user-select: none;
         display: flex;
     }
 
     .Dropdown-menu {
         left: 0;
-        min-width: 80px;
+        min-width: 100px;
         position: absolute;
         top: 100%;
         z-index: 20;
+
         .Menu {
-            border: var(--border);
+            border-top: 5px solid transparent;
             border-radius: var(--border-radius);
         }
     }

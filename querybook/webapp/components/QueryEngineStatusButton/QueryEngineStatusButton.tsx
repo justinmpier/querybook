@@ -219,7 +219,8 @@ export const QueryEngineStatusButton: React.FC<IProps> = ({
                     icon={'activity'}
                     tooltip={`Summary: ${queryEngineStatusToMessage[overallWorstQueryEngineStatus]}. Click to see details.`}
                     tooltipPos={tooltipPos}
-                    title="Engine"
+                    title="Status"
+                    standardSize
                 />
             </div>
             {panel}

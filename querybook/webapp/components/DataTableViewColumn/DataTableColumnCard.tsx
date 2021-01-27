@@ -52,17 +52,12 @@ export const DataTableColumnCard: React.FunctionComponent<IProps> = ({
                 </div>
                 {expanded ? (
                     <>
-                        <Divider
-                            marginTop="8px"
-                            marginBottom="16px"
-                            color="var(--color-primary-5)"
-                        />
                         {column.comment && (
-                            <KeyContentDisplay keyString="Definition">
+                            <KeyContentDisplay keyString="Properties">
                                 {column.comment}
                             </KeyContentDisplay>
                         )}
-                        <KeyContentDisplay keyString="User Comments">
+                        <KeyContentDisplay keyString="Custom Description">
                             {userCommentsContent}
                         </KeyContentDisplay>
                         <DataTableColumnStats columnId={column.id} />

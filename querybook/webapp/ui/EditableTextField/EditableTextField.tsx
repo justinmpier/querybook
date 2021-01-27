@@ -3,7 +3,7 @@ import * as DraftJs from 'draft-js';
 import React from 'react';
 
 import { AsyncButton } from 'ui/AsyncButton/AsyncButton';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton, TextButton } from 'ui/Button/Button';
 
 import { RichTextEditor } from 'ui/RichTextEditor/RichTextEditor';
 import './EditableTextField.scss';
@@ -45,7 +45,7 @@ export const EditableTextField: React.FunctionComponent<IEditableTextFieldProps>
 
     const toggleEditModeButton = !editMode ? (
         <span onClick={toggleEditMode} className="edit-mode-button">
-            <i className="fa fa-edit" />
+            <SoftButton title="Edit" icon="pencil"/>
         </span>
     ) : null;
 
@@ -61,9 +61,9 @@ export const EditableTextField: React.FunctionComponent<IEditableTextFieldProps>
     );
 
     const editModeButtons = editMode ? (
-        <div className="edit-mode-footer">
-            <Button color="cancel" title="Cancel" onClick={handleCancel} />
-            <AsyncButton color="confirm" title="Save" onClick={handleSave} />
+        <div className="edit-mode-footer flex-row row-padding with-padding">
+            <TextButton title="Cancel" onClick={handleCancel} />
+            <AsyncButton type="soft" title="Save" onClick={handleSave} />
         </div>
     ) : null;
 

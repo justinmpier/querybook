@@ -19,6 +19,7 @@ export interface IStyledButtonThemeProps {
     hoverColor?: string;
     hoverBgColor?: string;
     hoverBorderColor?: string;
+    padding?: string;
 }
 
 type StyledButtonProps = ISharedButtonProps & IStyledButtonThemeProps;
@@ -55,11 +56,12 @@ export const StyledButton = styled.span<StyledButtonProps>`
     }
 
 
-    ${(props) => (props.fontWeight ? `font-weight: ${props.fontWeight}` : '')};
+    ${(props) => (props.fontWeight ? `font-weight: ${props.fontWeight}` : 'font-weight: bold')};
 
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-    margin: ${(props) => (props.size === 'small' ? '0px' : '0px 4px')};
-    padding: ${(props) => (props.size === 'small' ? '1px 4px' : '4px 8px')};
+    margin: ${(props) => (props.size === 'small' ? '0px' : '0px')};
+    // padding: ${(props) => (props.size === 'small' ? '1px 4px' : '5px 10px')};
+    padding: ${(props) => (props.padding ? props.padding : '5px 10px')};
 
     white-space: nowrap;
     position: relative;

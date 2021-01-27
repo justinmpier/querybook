@@ -69,7 +69,7 @@ function applyUserSettings(
                     document.body.className = 'lush-theme';
                     break;
                 default:
-                    document.body.className = '';
+                    document.body.className = 'light-theme';
             }
         }
     }

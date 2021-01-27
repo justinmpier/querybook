@@ -1,18 +1,21 @@
 .DataDocViewersList {
     width: 400px;
-    padding: 0.5rem;
+    padding: var(--padding);
 
     > div {
-        padding: 0.5rem;
+        padding: var(--padding);
     }
 
     .public-row-switch {
-        padding-bottom: 1rem;
+        padding-bottom: var(--padding);
+
+        .Tabs {
+            width: 100%;
+        }
     }
 
     .public-row-description {
-        border-top: 1px solid var(--border-color);
-        padding-top: 1rem;
+        padding-top: var(--padding);
         text-align: center;
     }
 
@@ -21,9 +24,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1rem;
-        margin-bottom: 0.5rem;
+        padding-bottom: var(--padding);
 
         .add-user-icon {
             margin-top: 6px;
@@ -32,7 +33,7 @@
 
         .user-select-wrapper {
             flex: 1;
-            margin-right: 0.5rem;
+            margin-right: var(--padding);
             color: var(--invert-text-color);
         }
     }
@@ -52,7 +53,7 @@
     .viewers-user-row {
         display: flex;
         justify-content: space-between;
-        padding: 8px 0px;
+        padding: var(--padding) 0px;
 
         .access-info {
             display: flex;

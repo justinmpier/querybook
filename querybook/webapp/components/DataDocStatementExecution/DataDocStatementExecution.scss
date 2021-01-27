@@ -169,8 +169,8 @@
 
     .statement-results-summary {
         .number-of-rows-message {
-            font-weight: 700;
-            text-transform: uppercase;
+            color: var(--ui-text-color);
+
             .warning-word {
                 color: var(--color-false);
             }

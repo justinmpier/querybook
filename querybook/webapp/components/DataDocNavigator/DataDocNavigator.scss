@@ -14,16 +14,22 @@
 
     .list-header {
         display: flex;
-        border-bottom: 1px solid var(--border-color);
         justify-content: space-between;
+        margin-bottom: var(--padding);
+        background: var(--color-button-bg);
+        border-radius: var(--border-radius);
+        padding-right: 5px;
+        height: 43px; //TODO: Standardize inputs
+        align-items: center;
 
         // for safari
         flex-shrink: 0;
+
         .SearchBar {
             flex-grow: 1;
+
             input {
                 width: 100%;
-                padding: 12px;
             }
         }
     }
@@ -49,11 +55,15 @@
         font-size: var(--xsmall-text-size);
     }
 
-    .nav-favorite-dragged-over {
-        background-color: var(--color-accent-bg-hover);
+    .DataDocNavigator-favorites {
+        border-radius: var(--border-radius);
 
-        .DataDocNavigatorSection .navigator-header {
-            background-color: var(--color-accent-bg-hover);
+        &.nav-favorite-dragged-over {
+            background-color: var(--sidebar-hover-color);
+
+            .DataDocNavigatorSection .navigator-header {
+                background-color: transparent;
+            }
         }
     }
 }

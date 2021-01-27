@@ -42,7 +42,7 @@ function getQuerybookSidebarTourSteps() {
             content: `This is the environment picker. Every environment supports different query engines. Hover on them to get more info.`,
         },
         {
-            selector: '.EntitySidebar .apps-list [aria-label="DataDocs"]',
+            selector: '.EntitySidebar .EntitySidebar-middle [aria-label="DataDocs"]',
             content: (
                 <>
                     <p>
@@ -76,7 +76,7 @@ function getQuerybookSidebarTourSteps() {
             ),
         },
         {
-            selector: '.EntitySidebar .apps-list [aria-label="Adhoc Query"]',
+            selector: '.EntitySidebar .EntitySidebar-top [aria-label="Adhoc Query"]',
             content: (
                 <>
                     <p>
@@ -94,11 +94,11 @@ function getQuerybookSidebarTourSteps() {
             ),
         },
         {
-            selector: '.EntitySidebar .apps-list [aria-label="Tables"]',
+            selector: '.EntitySidebar .EntitySidebar-middle [aria-label="Tables"]',
             content: `This is the Tables Navigator. It will show you a list of all the tables in each metastore. You can use the search bar to quickly find the one you want and preview them.`,
         },
         {
-            selector: '.EntitySidebar .apps-list [aria-label="Snippets"]',
+            selector: '.EntitySidebar .EntitySidebar-middle [aria-label="Snippets"]',
             content: (
                 <>
                     <p>
@@ -115,7 +115,7 @@ function getQuerybookSidebarTourSteps() {
             ),
         },
         {
-            selector: '.EntitySidebar .apps-list .QueryExecutionButton',
+            selector: '.EntitySidebar .EntitySidebar-middle .QueryExecutionButton',
             content: (
                 <>
                     <p>
@@ -234,7 +234,7 @@ export const QuerybookSidebarUIGuide: React.FC = () => {
             <Button
                 className="Tour-button"
                 onClick={startTour}
-                color="accent"
+                // color="accent"
                 theme="fill"
             >
                 UI Tutorial

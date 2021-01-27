@@ -3,8 +3,7 @@
 .QueryExecutionPicker {
     .execution-selector-button {
         cursor: pointer;
-        font-weight: 700;
-        text-transform: uppercase;
+        color: var(--ui-text-color);
     }
 
     .query-execution-item {

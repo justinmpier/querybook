@@ -1,17 +1,9 @@
 .EditableTextField {
     .edit-mode-button {
         cursor: pointer;
-        opacity: 0;
-
         display: flex;
         margin-top: 4px;
         margin-right: 4px;
-    }
-
-    &:hover {
-        .edit-mode-button {
-            opacity: 1;
-        }
     }
 
     &.edit-mode .editor-wrapper {

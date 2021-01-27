@@ -1,11 +1,28 @@
 .EntitySidebar {
     height: 100%;
-    background-color: var(--bg-color);
-
     position: relative;
-    width: 50px;
+    width: var(--square-icon-size);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    border-right: (--border);
+
+
+    a {
+        width: var(--square-icon-size);
+        height: var(--square-icon-size);
+    }
+
+    .EntitySidebar-sidebar-mode-icon.active {
+        background: var(--bg-color-secondary);
+
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+        width: 46px;
+        position: relative;
+        margin-right: -8px;
+        padding-right: 8px;
+    }
+
 }
