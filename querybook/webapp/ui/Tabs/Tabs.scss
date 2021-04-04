@@ -19,9 +19,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            color: var(--ui-text-color);
+            font-weight: bold;
 
             a {
-                color: var(--ui-text-color);
 
                 .Icon {
                     & ~ span {
@@ -37,13 +38,13 @@
             }
 
             &.active {
-                // border-bottom-color: var(--select-border-color);
                 background: var(--color-button-bg);
                 border-radius: 5px;
+                color: var(--color-accent);
 
-                a {
-                    // color: var(--color-accent);
-                }
+                // a {
+                //     // color: var(--color-accent);
+                // }
             }
 
             &:not(.active):hover {

@@ -90,40 +90,44 @@
                     background: var(--bg-color-secondary);
                     flex: 1;
                     position: relative;
-                    overflow-y: scroll;
-                    overflow-x: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
 
                     .Tabs {
                         padding: var(--padding);
                         margin: var(--padding);
-                        width: 100%;
+                        width: unquote("calc(100% - (2 * var(--padding)))");
                     }
 
-                    .DataDocChartComposer-form {
-                        flex: 1;
+                    .DataDocChartComposer-right-editor-scroll {
                         overflow-y: auto;
-                        padding-right: 0px;
-                        flex-grow: 1;
-                        padding: var(--padding);
-                        padding-right: 0;
-                        .DataDocChartComposer-info {
-                            color: var(--light-text-color);
-                        }
 
-                        .Select,
-                        select,
-                        input:not([type='checkbox']) {
-                            width: 100%;
-                        }
+                        .DataDocChartComposer-form {
+                            flex: 1;
+                            overflow-y: auto;
+                            flex-grow: 1;
+                            padding: var(--padding);
 
-                        .Checkbox {
-                            display: flex;
-                            margin-left: 4px;
-                            font-size: var(--small-text-size);
-                            flex-direction: row-reverse;
-                            justify-content: space-between;
-                            align-items: center;
-                            margin: 4px 0px;
+                            .DataDocChartComposer-info {
+                                color: var(--light-text-color);
+                            }
+
+                            .Select,
+                            select,
+                            input:not([type='checkbox']) {
+                                width: 100%;
+                            }
+
+                            .Checkbox {
+                                display: flex;
+                                margin-left: 4px;
+                                font-size: var(--small-text-size);
+                                flex-direction: row-reverse;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin: 4px 0px;
+                            }
                         }
                     }
                 }

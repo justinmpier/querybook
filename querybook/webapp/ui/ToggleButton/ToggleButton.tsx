@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, ButtonProps } from 'ui/Button/Button';
+import { ButtonProps, SoftButton } from 'ui/Button/Button';
 
 import './ToggleButton.scss';
 
@@ -20,6 +20,6 @@ export const ToggleButton: React.FunctionComponent<IToggleButtonProps> = ({
         className={`ToggleButton ${checked ? 'checked' : ''}`}
         onClick={() => onClick(!checked)}
     >
-        <Button {...otherProps}>{title}</Button>
+        <SoftButton {...otherProps}>{title}</SoftButton>
     </div>
 );

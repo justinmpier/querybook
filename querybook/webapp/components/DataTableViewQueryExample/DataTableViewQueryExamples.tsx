@@ -23,7 +23,7 @@ import { DataTableViewQueryUsers } from './DataTableViewQueryUsers';
 import { UserName } from 'components/UserBadge/UserName';
 
 import { AsyncButton } from 'ui/AsyncButton/AsyncButton';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton } from 'ui/Button/Button';
 import { CodeHighlight } from 'ui/CodeHighlight/CodeHighlight';
 import { IconButton } from 'ui/Button/IconButton';
 import { Loading } from 'ui/Loading/Loading';
@@ -136,11 +136,11 @@ export const DataTableViewQueryExamples: React.FunctionComponent<IProps> = ({
             <div className="horizontal-space-between">
                 <Title size={4}>Queries with this table</Title>
                 {!isEmpty(filters) && (
-                    <Button onClick={clearFilter}>Clear Filter</Button>
+                    <SoftButton onClick={clearFilter}>Clear Filter</SoftButton>
                 )}
             </div>
-            <div className="filter-selection-section mb16 mt4">
-                <div>
+            <div className="filter-selection-section">
+                <div className="DataTableViewQueryExamples-section">
                     <div className="DataTableViewQueryExamples-header">
                         Top users
                     </div>
@@ -151,7 +151,7 @@ export const DataTableViewQueryExamples: React.FunctionComponent<IProps> = ({
                     />
                 </div>
 
-                <div className="mt12">
+                <div className="DataTableViewQueryExamples-section">
                     <div className="DataTableViewQueryExamples-header">
                         Top co-occuring tables
                     </div>
@@ -168,10 +168,12 @@ export const DataTableViewQueryExamples: React.FunctionComponent<IProps> = ({
     return (
         <div className="DataTableViewQueryExamples">
             {queryExampleFiltersSection}
-            <div className="DataTableViewQueryExamples-header">
-                Queries
+            <div className="DataTableViewQueryExamples-section">
+                <div className="DataTableViewQueryExamples-header">
+                    Queries
+                </div>
+                <QueryExamplesList tableId={tableId} filters={filters} />
             </div>
-            <QueryExamplesList tableId={tableId} filters={filters} />
         </div>
     );
 };

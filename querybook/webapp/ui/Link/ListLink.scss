@@ -50,9 +50,14 @@
 
     &.selected {
         color: var(--color-accent);
+        font-weight: bold;
+
+        &:hover {
+            color: var(--color-accent-hover);
+        }
     }
 
-    &:hover {
+    &:hover::not(.selected) {
         color: var(--text-color);
     }
 }

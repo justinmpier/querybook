@@ -100,10 +100,11 @@ body.light-theme {
     --color-button-bg: hsl(240deg 0% 94%);
     --color-button-hover: hsl(240deg 0% 92%);
 
-    --color-accent: #746BD2;
+    --color-accent: #E64073;
+    --color-accent-hover: hsl(342deg 77% 62%);
     --color-accent-text: white;
     --color-accent-bg: var(--color-accent);
-    --color-accent-bg-hover: #867ed7;
+    --color-accent-bg-hover: hsl(342deg 77% 62%);
 
     --color-null: var(--color-primary-4);
 

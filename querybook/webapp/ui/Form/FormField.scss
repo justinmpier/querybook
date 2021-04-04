@@ -7,6 +7,10 @@
     padding-top: 0px;
     margin: 0px;
 
+    &:last-child {
+        padding-bottom: 0px;
+    }
+
     &.FormField-stacked {
         flex-wrap: wrap;
 

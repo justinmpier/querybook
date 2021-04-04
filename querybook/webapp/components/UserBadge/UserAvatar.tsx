@@ -21,7 +21,7 @@ export interface IUserAvatarComponentProps
 //TODO: Share accent color var between js/css
 //TODO: Use a diff method for multiple users,
 //      e.g. patterns but with the same color.
-const defaultNoUserBackground = '#746BD2';
+const defaultNoUserBackground = '#E64073';
 const defaultUserIconBackgrounds = [
     defaultNoUserBackground,
 ];

@@ -963,7 +963,9 @@ const DataDocChartComposerComponent: React.FunctionComponent<
                         ) : null}
                         <div className="DataDocChartComposer-right-editor">
                             {tabsDOM}
-                            {formDOM}
+                            <div className="DataDocChartComposer-right-editor-scroll">
+                                {formDOM}
+                            </div>
                         </div>
                     </div>
                 </div>

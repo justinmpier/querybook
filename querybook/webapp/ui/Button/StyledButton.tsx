@@ -55,6 +55,9 @@ export const StyledButton = styled.span<StyledButtonProps>`
         }}
     }
 
+    &.active {
+        color: var(--color-accent);
+    }
 
     ${(props) => (props.fontWeight ? `font-weight: ${props.fontWeight}` : 'font-weight: bold')};
 

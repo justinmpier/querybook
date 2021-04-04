@@ -2,10 +2,15 @@
     position: relative;
     display: flex;
     align-items: center;
+    background: var(--color-button-bg);
+    padding-right: var(--padding);
+    border-radius: var(--border-radius);
 
     .DebouncedInput {
         flex: 1;
+        margin-right: var(--padding);
     }
+
     &.transparent {
         .DebouncedInput {
             input {
@@ -13,6 +18,7 @@
             }
         }
     }
+
     .SearchIcon {
         position: absolute;
         right: 12px;

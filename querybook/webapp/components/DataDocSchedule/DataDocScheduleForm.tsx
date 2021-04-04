@@ -359,7 +359,7 @@ const ScheduleExportsForm: React.FC<{
                     return (
                         <div
                             key={index}
-                            className="cell-export-field ph12 pv4 mt16 flex-row"
+                            className="cell-export-field flex-row"
                         >
                             <div className="flex1">
                                 {cellPickerField}

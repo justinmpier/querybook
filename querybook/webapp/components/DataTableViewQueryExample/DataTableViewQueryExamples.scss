@@ -1,14 +1,15 @@
 .DataTableViewQueryExamples {
 
-    .DataTableViewQueryExamples-header {
-        font-weight: bold;
+    .DataTableViewQueryExamples-section {
+        padding-bottom: var(--padding);
+
+        .DataTableViewQueryExamples-header {
+            font-weight: bold;
+        }
     }
 
     .filter-selection-section {
-        .Button.active {
-            border-color: var(--color-accent-text);
-            background-color: var(--color-accent-bg);
-        }
+        padding-top: var(--padding);
     }
 
     .DataTableViewQueryExamples-item {

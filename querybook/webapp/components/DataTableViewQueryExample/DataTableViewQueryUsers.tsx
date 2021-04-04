@@ -7,7 +7,7 @@ import { fetchTopQueryUsersIfNeeded } from 'redux/dataSources/action';
 
 import { UserAvatarList } from 'components/UserBadge/UserAvatarList';
 import { Loading } from 'ui/Loading/Loading';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton } from 'ui/Button/Button';
 import { UserBadge } from 'components/UserBadge/UserBadge';
 
 export function useLoadQueryUsers(tableId: number) {
@@ -69,9 +69,9 @@ const QueryUserButton: React.FC<{
     const handleClick = useCallback(() => onClick?.(uid), [onClick, uid]);
 
     return (
-        <Button onClick={handleClick} active={active}>
+        <SoftButton onClick={handleClick} active={active}>
             <UserBadge uid={uid} mini />
             <span className="ml4">({queryCount})</span>
-        </Button>
+        </SoftButton>
     );
 };

@@ -5,7 +5,7 @@ import { IStoreState, Dispatch } from 'redux/store/types';
 import { fetchTopQueryConcurrencesIfNeeded } from 'redux/dataSources/action';
 
 import { Loading } from 'ui/Loading/Loading';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton } from 'ui/Button/Button';
 import { TableName } from './DataTableName';
 
 export function useLoadQueryConcurrences(tableId: number) {
@@ -70,9 +70,9 @@ const QueryTableButton: React.FC<{
     ]);
 
     return (
-        <Button onClick={handleClick} active={active}>
+        <SoftButton onClick={handleClick} active={active}>
             <TableName tableId={tableId} />
             <span className="ml4">({queryCount})</span>
-        </Button>
+        </SoftButton>
     );
 };

@@ -2,5 +2,7 @@
     .cell-export-field {
         background-color: var(--light-bg-color);
         border-radius: var(--border-radius);
+        padding: var(--padding);
+        margin-bottom: var(--padding);
     }
 }
