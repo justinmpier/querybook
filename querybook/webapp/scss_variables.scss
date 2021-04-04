@@ -88,16 +88,17 @@
 }
 
 @mixin standard-textbox() {
-    background-color: var(--bg-color);
-    border: var(--border);
+    background-color: var(--color-button-bg);
+    border: none;
     border-radius: var(--border-radius);
     box-shadow: none;
     width: 100%;
-    padding: 8px;
+    padding: var(--padding);
     font-size: inherit;
     color: inherit;
 
     &:hover {
+        // background-color: var(--color-secondary);
         border-color: var(--hover-border-color);
     }
 
@@ -105,5 +106,9 @@
     &:focus {
         border-color: var(--focus-border-color);
         outline: none;
+    }
+    &::placeholder {
+        color: var(--light-text-color);
+        // color: var(--empty-text-color);
     }
 }
