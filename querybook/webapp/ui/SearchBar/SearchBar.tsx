@@ -3,7 +3,7 @@ import React from 'react';
 
 import { matchKeyPress } from 'lib/utils/keyboard';
 import { DebouncedInput } from 'ui/DebouncedInput/DebouncedInput';
-import { Button } from 'ui/Button/Button';
+import { SoftButton } from 'ui/Button/Button';
 
 import './SearchBar.scss';
 
@@ -83,9 +83,9 @@ export const SearchBar: React.FunctionComponent<ISearchBarProps> = ({
         !searchIcon && hasClearSearch && value ? (
             <>
                 <span className="search-bar-clear-sep" />
-                <Button theme="text" pushable onClick={() => onSearch('')}>
+                <SoftButton pushable onClick={() => onSearch('')}>
                     Clear
-                </Button>
+                </SoftButton>
             </>
         ) : null;
 

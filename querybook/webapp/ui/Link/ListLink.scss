@@ -57,7 +57,7 @@
         }
     }
 
-    &:hover::not(.selected) {
+    &:hover {
         color: var(--text-color);
     }
 }

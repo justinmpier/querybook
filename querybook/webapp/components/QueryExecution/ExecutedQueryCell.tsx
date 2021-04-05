@@ -98,7 +98,7 @@ export const ExecutedQueryCell: React.FunctionComponent<IProps> = ({
         <span
             className="query-execution-button"
             aria-label={'Copy and Paste this into the query editor above'}
-            data-balloon-pos={'up'}
+            data-balloon-pos={'left'}
             key={'replace'}
             onClick={() => {
                 changeCellContext(query);

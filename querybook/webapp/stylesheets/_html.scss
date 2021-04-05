@@ -204,9 +204,7 @@ strong {
 a {
     color: inherit;
     text-decoration: none;
-    &:hover {
-        color: var(--color-accent-text);
-    }
+
     &:active,
     &:focus {
         outline: none;
@@ -251,6 +249,9 @@ input:-webkit-autofill {
     .reactour__helper {
         background-color: var(--bg-color);
         color: var(--text-color);
+        border-radius: var(--border-radius-modals);
+        font-family: var(--family-sans-serif);
+
         > span {
             color: var(--bg-color);
             font-weight: var(--bold-font);
@@ -272,11 +273,7 @@ input:-webkit-autofill {
 }
 
 hr {
-    background-color: var(--hr-color);
-    border: none;
-    display: block;
-    height: 1px;
-    margin: 16px 0px;
+    @include hr-style();
 }
 
 pre {

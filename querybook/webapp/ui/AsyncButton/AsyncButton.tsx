@@ -2,6 +2,7 @@ import {
     ButtonProps,
     ButtonType,
     getButtonComponentByType,
+    SoftButton,
 } from '../Button/Button';
 import React from 'react';
 import clsx from 'clsx';
@@ -72,6 +73,6 @@ export class AsyncButton extends React.PureComponent<
             }),
         };
         const Button = getButtonComponentByType(type);
-        return <Button {...buttonProps}>{this.props.children}</Button>;
+        return <SoftButton {...buttonProps}>{this.props.children}</SoftButton>;
     }
 }

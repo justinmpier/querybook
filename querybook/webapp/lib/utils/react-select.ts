@@ -27,17 +27,18 @@ export const valueFromId = (opts: IOptions, id: any) =>
 export const defaultReactSelectStyles = {
     control: (styles, { isFocused, isSelected }) => ({
         ...styles,
-        backgroundColor: 'var(--bg-color)',
         boxShadow: 'none',
         borderRadius: 'var(--border-radius)',
-        borderColor: isFocused
-            ? 'var(--focus-border-color)'
+        borderColor: 'transparent',
+        backgroundColor: isFocused
+            ? 'var(--hover-bg-color)'
             : isSelected
-            ? 'var(--focus-border-color)'
-            : 'var(--border-color)',
+            ? 'var(--hover-bg-color)'
+            : 'var(--color-button-bg)',
         '&:hover': {
-            borderColor: 'var(--hover-border-color)',
+            backgroundColor: 'var(--hover-bg-color)',
         },
+        cursor: 'pointer',
     }),
     input: (styles) => ({
         ...styles,
@@ -76,15 +77,15 @@ export const defaultReactSelectStyles = {
         backgroundColor: isDisabled
             ? 'var(--color-null)'
             : isSelected
-            ? 'var(--select-bg-color)'
+            ? 'var(--hover-bg-color)'
             : isHovered || isFocused
             ? 'var(--hover-bg-color)'
             : 'inherit',
         color:
-            isHovered || isFocused
+            !isSelected && (isHovered || isFocused)
                 ? 'var(--text-hover-color)'
                 : 'var(--text-color)',
-        cursor: isDisabled ? 'not-allowed' : 'default',
+        cursor: isDisabled ? 'not-allowed' : 'pointer',
         ...(data.color ? dot(data.color) : {}),
     }),
     menu: (styles) => ({

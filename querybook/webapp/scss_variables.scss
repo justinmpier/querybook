@@ -98,17 +98,33 @@
     color: inherit;
 
     &:hover {
-        // background-color: var(--color-secondary);
-        border-color: var(--hover-border-color);
+        background-color: var(--hover-bg-color);
     }
 
     &:active,
     &:focus {
         border-color: var(--focus-border-color);
         outline: none;
+
+        background-color: var(--hover-bg-color);
     }
     &::placeholder {
         color: var(--light-text-color);
         // color: var(--empty-text-color);
     }
+}
+
+@mixin property-style {
+    color: var(--ui-text-color);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+@mixin hr-style {
+    border: none;
+    display: block;
+    height: 5px;
+    margin: 16px 0px;
+    border-radius: 10px;
+    background-color: var(--color-button-bg);
 }

@@ -61,7 +61,7 @@ export const EditableTextField: React.FunctionComponent<IEditableTextFieldProps>
     );
 
     const editModeButtons = editMode ? (
-        <div className="edit-mode-footer flex-row row-padding with-padding">
+        <div className="edit-mode-footer flex-row with-padding">
             <TextButton title="Cancel" onClick={handleCancel} />
             <AsyncButton type="soft" title="Save" onClick={handleSave} />
         </div>

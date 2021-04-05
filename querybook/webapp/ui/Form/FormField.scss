@@ -6,6 +6,8 @@
     padding-left: 0px;
     padding-top: 0px;
     margin: 0px;
+    color: var(--ui-text-color);
+    font-weight: bold;
 
     &:last-child {
         padding-bottom: 0px;
@@ -70,10 +72,12 @@
     padding-bottom: var(--padding);
 
     span {
-        font-size: var(--text-size);
         white-space: nowrap;
         margin-right: 12px;
+        color: var(--ui-text-color);
+        font-weight: bold;
     }
+
     hr {
         width: 100%;
         margin: 12px 0px;

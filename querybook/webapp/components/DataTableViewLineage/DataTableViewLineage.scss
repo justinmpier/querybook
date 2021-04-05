@@ -13,11 +13,17 @@
 
     .DataTableViewMini {
         position: absolute;
-        height: 90%;
-        top: 5%;
-        width: 24%;
-        left: 10px;
-        opacity: 0.9;
+        height: 100%;
+        top: 0px;
+        width: 280px;
+        left: 0px;
+        opacity: 1;
+        padding-left: 10px;
+        background: var(--bg-color);
+
+        .DataTableViewMini-border {
+            display: none;
+        }
     }
 }
 

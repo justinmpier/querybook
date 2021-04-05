@@ -14,8 +14,9 @@
     .env-icon {
         font-size: var(--xxxsmall-text-size);
         font-family: var(--family-monospace);
-        background-color: var(--light-bg-color);
-        color: var(--text-color);
+        background: var(--color-button-bg);
+        font-weight: bold;
+        color: var(--ui-text-color);
         border-radius: 10px;
         border: 3px solid transparent;
         transition: border 0.3s ease-out;
@@ -30,6 +31,7 @@
 
         &.selected {
             border: 3px solid var(--focus-border-color);
+            color: var(--color-accent);
         }
 
         &.disabled {

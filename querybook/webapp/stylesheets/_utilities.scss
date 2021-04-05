@@ -78,16 +78,6 @@
     }
 }
 
-.row-padding {
-    & > * {
-        margin-left: 10px;
-
-        &:first-child {
-            margin-left: 0px;
-        }
-    }
-}
-
 .fullscreen {
     position: fixed;
     bottom: 0;
@@ -102,7 +92,7 @@
 }
 
 .dh-hr {
-    background-color: var(--hr-color);
+    background-color: var(--color-button-bg);
     width: 100%;
     margin: 0px 0px 0px 12px;
 }

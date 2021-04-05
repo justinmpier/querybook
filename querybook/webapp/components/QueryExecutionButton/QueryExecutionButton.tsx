@@ -167,7 +167,7 @@ class QueryExecutionButtonComponent extends React.PureComponent<
                                 ? activeQueryExecutions.length.toString()
                                 : null
                         }
-                        title="Runs"
+                        title="Execs"
                         standardSize
                     />
                 </span>

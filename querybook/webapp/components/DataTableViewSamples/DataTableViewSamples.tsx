@@ -197,7 +197,7 @@ export const DataTableViewSamples: React.FunctionComponent<IDataTableViewSamples
             >
                 {({ submitForm, isSubmitting, isValid, values }) => (
                     <div className="mb12">
-                        <div className="DataTableViewSamples-top flex-row">
+                        <div className="DataTableViewSamples-row DataTableViewSamples-top flex-row">
                             <SimpleField
                                 label="Engine"
                                 type="react-select"
@@ -214,7 +214,7 @@ export const DataTableViewSamples: React.FunctionComponent<IDataTableViewSamples
                                 withDeselect
                             />
                         </div>
-                        <div className="DataTableViewSamples-mid">
+                        <div className="DataTableViewSamples-row DataTableViewSamples-mid">
                             <div style={{ flex: 3 }}>
                                 <SimpleField
                                     label="Where"
@@ -252,7 +252,7 @@ export const DataTableViewSamples: React.FunctionComponent<IDataTableViewSamples
                                 )}
                             </div>
                         </div>
-                        <div className="DataTableViewSamples-bottom">
+                        <div className="DataTableViewSamples-row DataTableViewSamples-bottom">
                             <div className="flex-row">
                                 <SimpleField
                                     type="react-select"
@@ -280,7 +280,7 @@ export const DataTableViewSamples: React.FunctionComponent<IDataTableViewSamples
                                     />
                                 )}
                             </div>
-                            <div className="DataTableViewSamples-button mb8">
+                            <div className="DataTableViewSamples-button flex-row with-padding">
                                 <AsyncButton
                                     title="View Query"
                                     onClick={() =>
@@ -369,8 +369,8 @@ const DataTableViewSamplesTable: React.FC<{
     ) : samples ? (
         <SamplesTableView tableName={tableName} samples={samples} />
     ) : (
-        <div className="samples-not-found">
-            Samples not found, Click "Generate" to create samples.
+        <div className="samples-not-found ">
+            No samples found, click "Generate" to create samples.
         </div>
     );
 

@@ -1,18 +1,19 @@
 .FormFieldInputSection {
     .RichTextEditor {
-        background-color: var(--bg-color);
-        border: var(--border);
+        background-color: var(--color-button-bg);
+        border: none;
         border-radius: var(--border-radius);
-        min-height: 40px;
+        min-height: 37px;
         padding: 8px;
+        font-weight: normal;
 
         &:hover {
-            border-color: var(--hover-border-color);
+            background-color: var(--hover-bg-color);
         }
 
         &:active,
         &:focus {
-            border-color: var(--focus-border-color);
+            background-color: var(--hover-bg-color);
             outline: none;
         }
     }

@@ -22,23 +22,19 @@
 }
 
 .DataTableNavigatorSearchFilter {
-    padding: 4px 12px;
+    padding: var(--padding);
     position: relative;
 
     .filter-reset-button {
         position: absolute;
         right: 12px;
-        top: 12px;
+        top: 14px;
     }
 
     .search-filter-row {
         display: flex;
-        align-items: flex-start;
-        padding: 8px 0px;
-
-        &.toggle-padding {
-            padding-bottom: 2px;
-        }
+        align-items: center;
+        padding: var(--padding) 0px;
 
         .Title {
             margin-left: 10px;
@@ -47,9 +43,7 @@
 
         .search-filter-row-item {
             flex: 1;
-            .DebouncedInput input {
-                padding: 2px 8px;
-            }
+            display: flex;
         }
     }
 }

@@ -9,6 +9,9 @@
     .sidebar-content {
         height: 100%;
         width: 50px;
+    }
+
+    .DataDocLeftSidebar-bottom-icons {
         padding-bottom: 6px; // visual alignment
     }
 
@@ -22,7 +25,6 @@
     .sidebar-content-table,
     .sidebar-content-contents {
         width: 280px;
-        height: 80vh;
     }
 
     .sidebar-content-table {
@@ -30,6 +32,11 @@
             overflow-x: hidden;
             overflow-y: auto;
             max-height: 100%;
+            margin: 0px;
+
+            .DataTableViewMini-border {
+                display: none;
+            }
         }
     }
 

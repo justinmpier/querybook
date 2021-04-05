@@ -9,6 +9,10 @@
     background-color: var(--bg-color);
     cursor: pointer;
 
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
     mark {
         background-color: var(--color-accent-bg);
         color: var(--color-accent-text);

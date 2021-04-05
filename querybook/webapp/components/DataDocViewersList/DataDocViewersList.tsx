@@ -168,7 +168,7 @@ export const DataDocViewersList: React.FunctionComponent<IDataDocViewersListProp
             </div>
             <div className="public-row-description">
                 {dataDoc.public
-                    ? 'This document can be viewed by anyone who has access to this environment. Additionally the users below can have further permissions.'
+                    ? 'This document can be viewed by anyone who has access to this environment. The users below can have additional permissions.'
                     : 'Only the invited users below can view this document.'}
             </div>
         </>

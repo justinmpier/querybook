@@ -13,6 +13,8 @@ import { Select, makeSelectOptions } from 'ui/Select/Select';
 
 import { IFilterCondition, tableColumnFiltersByType } from './useFilterCell';
 
+import './StatementResultColumnInfo.scss';
+
 const StyledColumnInfo = styled.div.attrs({
     className: 'StatementResultColumnInfo',
 })`
@@ -23,8 +25,8 @@ const StyledColumnInfo = styled.div.attrs({
         ul li {
             &:first-child,
             &:last-child {
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
+                // border-top-left-radius: 0;
+                // border-top-right-radius: 0;
             }
         }
     }
@@ -108,8 +110,9 @@ export const StatementResultColumnInfo: React.FC<IColumnInfoProps> = ({
 
     return (
         <StyledColumnInfo>
+            <div className="column-content p8">{contentDOM}</div>
             <Tabs
-                className="PopoverTabs light-pills"
+                className="PopoverTabs"
                 wide
                 items={ColumnInfoTabs.map((tab) => ({
                     icon: ColumnInfoTabToIcons[tab],
@@ -118,9 +121,8 @@ export const StatementResultColumnInfo: React.FC<IColumnInfoProps> = ({
                 }))}
                 onSelect={(k: ColumnInfoTabType) => setTab(k)}
                 selectedTabKey={tab}
-                pills
+                wide
             />
-            <div className="column-content p8">{contentDOM}</div>
         </StyledColumnInfo>
     );
 };
@@ -189,11 +191,11 @@ const ColumnInfoMenu: React.FC<IColumnInfoMenuProps> = ({
                 </div>
                 <div className="mt4">
                     <Title weight="var(--extra-bold-font)" size={8}>
-                        Type
+                        Detected Type
                     </Title>
-                    <Title size={8} subtitle>
+                    <div className="StatementResultColumnInfo-type">
                         {colType}
-                    </Title>
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,7 +248,7 @@ const ColumnQuickInsights: React.FC<IColumnQuickInsightsProps> = ({
         <div className="column-info-section">
             <div className="column-info-header">
                 <Title weight="var(--extra-bold-font)" size={8}>
-                    QUICK INSIGHTS
+                    Quick Insights
                 </Title>
             </div>
             <div className="column-dropdown-content">

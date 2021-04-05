@@ -132,7 +132,7 @@ function getQuerybookSidebarTourSteps() {
         },
         {
             selector:
-                '.EntitySidebar .sidebar-footer [aria-label="Search Docs/Tables"]',
+                '.EntitySidebar [aria-label="Search Docs/Tables"]',
             content: (
                 <>
                     <p>This is the Advanced Search for DataDocs and Tables.</p>

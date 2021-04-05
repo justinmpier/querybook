@@ -1,4 +1,10 @@
 .DataTableViewSamples {
+    .DataTableViewSamples-row {
+        .FormField:last-child {
+            padding-bottom: var(--padding);
+        }
+    }
+
     .DataTableViewSamples-top {
         .FormField:first-child {
             min-width: 200px;

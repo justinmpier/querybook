@@ -1,0 +1,7 @@
+@import './../../scss_variables.scss';
+
+.StatementResultColumnInfo {
+    .StatementResultColumnInfo-type {
+        @include property-style();
+    }
+}

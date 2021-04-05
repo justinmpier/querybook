@@ -108,7 +108,6 @@ export const BoardCreateUpdateForm: React.FunctionComponent<IBoardCreateUpdateFo
                                 {nameField}
                                 {/* {publicField} */}
                                 {descriptionField}
-                                <br />
                                 <div className="horizontal-space-between">
                                     {!isCreateForm && (
                                         <TextButton

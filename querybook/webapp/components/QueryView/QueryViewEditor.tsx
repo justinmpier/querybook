@@ -11,7 +11,7 @@ import { IQueryExecution } from 'redux/queryExecutions/types';
 import { queryEngineByIdEnvSelector } from 'redux/queryEngine/selector';
 import { Title } from 'ui/Title/Title';
 import { StatusIcon } from 'ui/StatusIcon/StatusIcon';
-import { Button } from 'ui/Button/Button';
+import { Button, SoftButton } from 'ui/Button/Button';
 import { useDataFetch } from 'hooks/useDataFetch';
 import { Tag } from 'ui/Tag/Tag';
 import { BoundQueryEditor } from 'components/QueryEditor/BoundQueryEditor';
@@ -113,7 +113,7 @@ export const QueryViewEditor: React.FunctionComponent<{
 
     const goToDataDocButton =
         cellInfo != null ? (
-            <Button onClick={goToDataDoc} title="Go To DataDoc" />
+            <SoftButton onClick={goToDataDoc} title="Go To DataDoc" />
         ) : null;
 
     const shareExecutionButton = showAccessControls ? (
@@ -126,7 +126,7 @@ export const QueryViewEditor: React.FunctionComponent<{
 
             <div className="horizontal-space-between flex-row with-padding">
                 {shareExecutionButton}
-                <Button onClick={exportToAdhocQuery} title="Edit" />
+                <SoftButton onClick={exportToAdhocQuery} title="Edit" />
                 {goToDataDocButton}
             </div>
         </div>

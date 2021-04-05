@@ -2,13 +2,10 @@
     position: relative;
     display: flex;
     align-items: center;
-    background: var(--color-button-bg);
-    padding-right: var(--padding);
     border-radius: var(--border-radius);
 
     .DebouncedInput {
         flex: 1;
-        margin-right: var(--padding);
     }
 
     &.transparent {
@@ -29,5 +26,10 @@
         display: none;
         border-left: var(--border);
         height: 20px;
+    }
+
+    .Button {
+        margin-left: var(--padding);
+        height: 37px; // To match search bar
     }
 }

@@ -58,7 +58,7 @@ export const EnvironmentTopbar: React.FC = React.memo(() => {
                             selected,
                         })}
                     >
-                        <span className="env-icon-text">{envName}</span>
+                        <span className="env-icon-text">{(envName || '').slice(0, 4)}</span>
                     </span>
                 </Link>
             );

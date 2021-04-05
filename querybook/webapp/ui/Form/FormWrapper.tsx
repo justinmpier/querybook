@@ -30,7 +30,7 @@ const StyledFormWrapper = styled.div.attrs<
     }
 
     .FormSectionHeader span {
-        font-size: ${(props) => props.sectionFontSize};
+        // font-size: ${(props) => props.sectionFontSize};
     }
 `;
 

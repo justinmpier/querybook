@@ -1,5 +1,7 @@
 .ImpressionWidgetMenu {
     min-width: 500px;
+    padding: var(--padding);
+
     .ImpressionWidgetUsers,
     .ImpressionWidgetTimeseries {
         flex: 1;
